@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/header.css">
+    <style>
+    div .dropdown{
+        width:100px;
+		list-style:none; margin:0; padding:0;
+        border:1px solid #aaa;
+        text-align: center;
+	}
+    </style>
+</head>
+<body>
+    <div id="header">
+        <div class="public-top-layout">
+            <div class="topbar wrapper">
+                    <div id="user-login" class="left">
+                        您好，欢迎来到
+                        <a href="">汉购网</a>
+                        <span class="login-link">
+                            <a href="login.html">请登录</a>
+                        </span>
+                        <span class="login-link">
+                            <a href="reg.html">立即注册</a>
+                        </span>
+                    </div>
+                <div class="quick-menu right">
+                        <dl class="con-cart">
+                            <span>购物车</span>
+                                <b><a style="color:#25B84D" href="">0</a>件</b>
+                        </dl>
+                        <dl>
+                            <div><a href="">商家入驻</a></div>
+                        </dl>
+                        <dl>
+                            <div><a data-trigger="dropdown" href="">我的订单</a>
+
+                                <ul class="dropdown" style="display:none">
+                                    <li><a href="" target="_blank">待付款订单</a></li>
+                                    <li><a href="" target="_blank">待确认收货</a></li>
+                                    <li><a href="" target="_blank">待评价交易</a></li>
+                                </ul>
+                            </div>
+                        </dl>
+                        <dl>
+                            <div><a href="">个人中心</a></div>
+                        </dl>
+                        <dl>
+                                <div><a data-trigger="dropdown" href="">客户服务</a>
+
+                                    <ul class="dropdown" style="display:none">
+                                        <li><a href="" target="_blank">帮助中心</a></li>
+                                        <li><a href="" target="_blank">售后服务</a></li>
+                                        <li><a href="" target="_blank">客服中心</a></li>
+                                    </ul>
+                                </div>
+                        </dl>
+                        <dl>
+                            <div><a data-trigger="dropdown" href="">关注我们</a>
+                                <ul class="dropdown" style="display:none">
+                                    <li><a href=""><img style="width:100px" src="picture/05234711548071503.png" alt=""></a></li>
+                                </ul>
+                            </div>
+                        </dl>
+                </div>
+            </div>
+        </div>
+        <script src="js/jquery-1.11.3.js"></script>
+  <script>
+      $("[data-trigger=dropdown]")
+		.parent()
+		.on("mouseover",function(){
+			$(this).children().last().show()
+		})
+		//return parent div
+		.on("mouseout",function(){
+			$(this).children().last().hide()
+		})
+  </script>
+    <div id="search-middle">
+        <div class="header-wrap d-flex mt-3">
+            <div class="public-head-layout">
+                <a href="" class="site-logo">
+                    <img src="picture/05866942534214961.png">
+                </a> 
+            </div> 
+            <div class="logo-test">
+                <div class="search">
+                    <form class="seach-form">
+                        <input type="text" id="search-act" name="act" placeholder="农谷鲜" class="input-text">
+                        <input type="submit" id="button" value="搜索" class="input-submit">
+                    </form>
+                </div> 
+                <div class="keyword">
+                    <ul class="list-unstyled d-flex">
+                        <li><a href="detail_eggs.html">鸡蛋</a></li>
+                        <li><a href="">豆皮</a></li>
+                        <li><a href="">苹果</a></li>
+                        <li><a href="">土豆</a></li>
+                        <li><a href="">米</a></li>
+                        <li><a href="">油</a></li>
+                        <li><a href="">热干面</a></li>
+                        <li><a href="">龙虾</a></li>
+                        <li><a href="">锅巴</a></li>
+                        <li><a href="">罐头</a></li>
+                        <li><a href="">夏橙</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--<div class="nav justify-content-around">
+        <div>
+            <div class="all-category">
+                <div class="title">
+                    <a href="">所有商品分类</a>
+                </div>
+            </div>
+           <div>
+                <ul class="menu list-unstyled">
+                    <li>
+                        <div>
+                            <img src="picture/05885064124529864.png" alt=""><span>生鲜水果</span>
+                        </div>          
+                    </li>
+                    <li>
+                        <div>
+                            <img src="picture/05885064332222891.png" alt=""><span>蛋奶素食</span>
+                        </div>         
+                    </li>
+                    <li>
+                        <div>
+                            <img src="picture/05885064496732751.png" alt=""><span>休闲零食</span>
+                        </div>
+                               
+                    </li>
+                    <li>
+                        <div>
+                            <img src="picture/05885064692739649.png" alt=""><span>粮油杂货</span>
+                        </div>     
+                    </li>
+                    <li>
+                        <div>
+                            <img src="picture/05885064881444846.png" alt=""><span>酒水饮品</span>
+                        </div>        
+                    </li>
+                    <li>
+                        <div>
+                            <img src="picture/05885065067612515.png" alt=""><span>名优特色馆</span>
+                        </div>     
+                    </li>
+                </ul>
+            </div>
+        <ul class="site-menu list-unstyled d-flex">
+            <li><a href="">土家购</a></li>
+            <li><a href="">神农架购</a></li>
+            <li><a href="">仙岛云购</a></li>
+            <li><a href="">洞庭云购</a></li>
+            <li><a href="">洞庭云虾</a></li>
+        </ul>
+    </div>
+    </div> -->
+</div>
+</body>
+</html>

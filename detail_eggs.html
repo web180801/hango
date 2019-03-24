@@ -1,0 +1,1148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{
+            background: #f5f7f8;
+            min-width:1200px;
+        }
+/*绿色导航栏*/
+.nav{
+    width: 100%;
+    height: 50px;
+    background: #25B84D;
+    border-bottom: solid 1px #e7e7e7;
+    margin: 0 auto;
+    position: relative;
+    z-index: 99;
+    zoom: 1;
+}
+nav a:link, a:visited {
+    text-decoration: none;
+}
+nav a:hover{
+    text-decoration: none;
+}
+.menu{
+    display: none;
+    width: 170px;
+    border-top: none;
+    }
+.menu img{
+    width:35px;
+}
+.menu>li {
+    width: 170px;
+    height: 74px;
+    position: relative;
+    z-index: 1;
+    zoom: 1;
+    margin: 0;
+    padding: 0;
+}
+.site-menu{
+    font-size: 0;
+    white-space: nowrap;
+    max-width: 988px;
+    float: left;
+    padding-left: 20px;
+    margin-top:0px;
+}
+.all-category{
+    display: block;
+    width: 172px;
+    height: 50px;
+    float: left;
+}
+.all-category .title {
+    line-height: 50px;
+    width: 172px;
+    height: 50px;
+    background: #08AB35;
+    overflow: hidden;
+}
+ .all-category .title a {
+    display: block;
+    width: 172px;
+    text-align: center;
+    font-size: 14px;
+    float: left;
+    color: #fff;
+}
+.site-menu li{
+    float: left;
+    position:relative;
+    vertical-align: top;
+}
+a{
+    text-decoration: none;
+}
+.wrap{
+    width: 1200px!important;
+    margin: auto;
+}
+.site-menu li a {
+    font-size: 14px;
+    line-height: 50px;
+    color: #fff;
+    padding: 0 20px;
+    zoom: 1;
+}
+
+/*商品*/
+        .egg-container{
+            width:1200px !important;
+            margin:0 auto;
+        }
+        .my_head{
+            width:100%;
+        }
+        .egg-module{
+            padding:25px;
+            border: solid 1px #D7D7D7;
+            margin-bottom: 10px;
+            background: #fff;
+        }
+        .egg-title{
+            border-bottom:1px solid #eee;
+        }
+        .egg-module .egg-title p{
+            font-size:12px;
+            color:#999;
+            height:20px;
+            padding:8px 10px;
+        }
+        .egg-module .egg-title p b{
+            color:#f62121;
+            font-size:18px;
+        }
+        .list-pic{
+            font-size: 0;
+            word-spacing: -1em;
+            display: block;
+            width: 1214px;
+            margin-left: -16px;
+            padding-left:0px;
+        }
+        .egg-cont-list{
+            width:1200px;
+            margin:0 auto;
+        }
+        .nav-sale{
+            font: 12px/45px "microsoft yahei";
+            color: #777;
+            vertical-align: top;
+            display: inline-block;
+            padding: 0 0 0 10px;
+        }
+        .nav-sale ul{
+            list-style: none;
+            display:flex;
+        }
+        .nav-sale ul li{
+            border:1px solid #ddd;
+            margin:0 10px 0 0;
+            background-color: #f8f8f8;
+        }
+        .nav-sale ul li a{
+            color:#555;
+            padding:0 10px;
+            text-decoration: none;
+        }
+        .nav-filter{
+            vertical-align: top;
+            display: inline-block;
+            width: 350px;
+            height: 25px;
+            margin-top: 8px;
+            position: relative;
+            z-index: 19; 
+        }
+        .nav-filter ul{
+            list-style: none;
+            display:block;
+            position:absolute; 
+            width:350px;
+            height:30px; 
+            z-index:1;
+        }
+        .nav-filter ul li{
+            display:inline-block;
+            vertical-align: middle;
+            margin-left:5px;
+        }
+        .nav-filter ul li a{
+            font: 12px/29px "microsoft yahei";
+            color: #333;
+            display: block;
+            padding: 0 8px 0 4px;
+            text-decoration: none;
+        }
+        .goods-location{
+            font: 12px/45px "microsoft yahei";
+            color: #777;
+            vertical-align: top;
+            display: inline-block;
+            padding: 0 0 0 30px;
+        }
+        .pagination{
+            display: inline-block;
+            padding: 0;
+            margin: 12px 5px 0 0;
+        }
+        .pagination ul{
+            display:flex;
+        }
+        .pagination ul li span{
+            font: 400 12px/16px "microsoft yahei";
+            color: #AAA;
+            background-color: #FAFAFA;
+            text-align: center;
+            display: block;
+            min-width: 16px;
+            padding: 2px 6px;
+            border: 1px solid #E6E6E6;
+            position: relative;
+        }
+        .pagination li:last-child {
+            margin-left: 8px;
+        }
+        .goods-nav{
+            background:#fff;
+        }
+        .goods-content{
+            background-color: #fff;
+            line-height: 18px;
+            width: 287px;
+            margin: 1px;
+            border: solid 1px #F0F0F0;
+            box-shadow: 0 0 3px rgba(153,153,153,.1);
+            height: 403px;
+        }
+        li:hover .goods-content {
+            box-shadow: 0 3px 3px rgba(102,102,102,.65);
+            height: 460px!important;
+        }
+        .goods-content:hover {
+            z-index: 12;
+        }
+        .goods-list{
+            margin:0 auto;
+        }
+        .goods-list ul li{
+            font-size: 12px;
+            vertical-align: middle;
+            letter-spacing: normal;
+            word-spacing: normal;
+            display: inline-block;
+            width: 288px;
+            margin: 12px 0 0 15px;
+            height: 405px;
+        }
+        .goods-pic{
+            background-color: #fff;
+        }
+        .goods-list .goods-pic a{
+            line-height: 0;
+            text-align: center;
+            vertical-align: middle;
+            display: table-cell;
+            width: 288px;
+            height: 288px;
+        }
+        .goods-pic img {
+            max-width: 288px;
+            max-height: 288px;
+            vertical-align: middle;
+        }
+        .goods-detail{
+            width: 266px;
+            padding: 14px 11px;
+        }
+        .goods-price{
+            vertical-align: top;
+            height:20px;
+        }
+        .sale-price{
+            font-size: 22px;
+            font-weight: 600;
+            max-width: 110px;
+            float: left;
+            color:#c00;
+            height:20px;
+        }
+        .sale-price b{
+            font-size:12px;
+        }
+        .inline-price{
+            color:#999;
+            text-decoration: line-through;
+            max-width: 80px;
+            display:flex;
+            margin-left: 10px;
+        }
+        .goods-name{
+            height:40px;
+        }
+        .goods-name a{
+            color:#000;
+            font-size:14px;
+            text-decoration: none;
+        }
+        .goods-name span{
+            color:#333;
+        }
+        .goods-info .goods-num{
+            position: relative;
+            display: inline-block;
+            padding-left: 25px;
+            color: #333;
+            font-weight: 700;
+            text-decoration: none;
+        }
+        .goods-info .seller-name{
+            float:right;
+            max-width: 110px;
+            color: #999;
+            height: 18px;
+            text-decoration: none;
+        }
+        .tc{
+            margin-bottom:20px;
+            margin-top:20px;
+            text-align:center;
+        }
+        .pagination li:first-child {
+            margin-right: 8px;
+        }
+        .pagination ul li {
+            vertical-align: top;
+            letter-spacing: normal;
+            word-spacing: normal;
+            display: inline-block;
+            margin: 0 0 0 -1px;
+        }
+        .pagination ul li span {
+            font: 600 12px/20px Verdana,Tahoma,Arial;
+            color: #AAA;
+            background-color: #FFF;
+            text-align: center;
+            display: block;
+            min-width: 20px;
+            padding: 8px;
+            border: 1px solid #E6E6E6;
+            position: relative;
+            z-index: 1;
+        }
+        .pagination li span.currentpage {
+            color: #FFF;
+            font-weight: 700;
+            background-color: #00A53C;
+            border-color: #00A53C;
+            position: relative;
+            z-index: 2;
+        }
+        .title h3 {
+            font: 400 14px/20px "microsoft yahei";
+            color: #999;
+            height: 20px;
+            padding: 8px 10px;
+        }
+        .title h3 b {
+            color: #333;
+            font-size: 18px;
+            margin-right: 15px;
+        }
+        .wwi-booth-list {
+            overflow: hidden;
+            width: 1215px;
+            margin-left: -15px;
+        }
+        .wwi-booth-list .goods-pic img {
+            max-width: 228px;
+            max-height: 226px;
+        }
+        .wwi-booth-list li {
+            display: block;
+            position: relative;
+            z-index: 1;
+            float: left;
+            margin-left: 15px;
+            margin-bottom: 15px;
+            width: 226px;
+            height: 304px;
+            border: 1px solid #eaeaea;
+            background: #fff;
+            overflow: hidden;
+        }
+        .wwi-booth-list .goods-pic {
+            width: 226px!important;
+            height: 226px!important;
+            padding: 0;
+            margin: 0 auto;
+        }
+        .hot-sale .wwi-booth-list li .goods-name {
+            margin-bottom: 9px;
+            padding: 0 15px;
+            height: 40px;
+            overflow: hidden;
+        }
+        .wwi-booth-list .goods-price {
+            padding: 0 15px;
+            line-height: 14px;
+            color: #E31436;
+            font-size: 16px;
+            font-weight: 700;
+        }
+        .wwi-booth-list .goods-price span {
+            padding-left: 5px;
+            text-decoration: line-through;
+            color: #999;
+            font-size: 12px;
+            font-weight: 400;
+        }
+        .hot{
+            width:1200px;
+            margin:0 auto;
+            padding:0px;
+        }
+        .hot-sale ul{
+            padding-left:0px;
+        }
+        .wwi-module{
+            width:1200px;
+            margin:0 auto;
+            border:1px solid #D7D7D7;
+            margin-bottom:10PX;
+            background: #fff
+        }
+      
+    </style>
+</head>
+<body>
+    <iframe class="my_head" src="header.html" frameborder="0" scrolling="no"></iframe>
+    <div class="nav">
+        <div class="wrap">
+            <div class="all-category">
+                <div class="title">
+                    <a href="">所有商品分类</a>
+                </div>
+            </div>
+           <div>
+                <ul class="menu">
+                    <li>
+                        <div>
+                            <img src="picture/05885064124529864.png" alt=""><span>生鲜水果</span>
+                        </div>          
+                    </li>
+                    <li>
+                        <div>
+                            <img src="picture/05885064332222891.png" alt=""><span>蛋奶素食</span>
+                        </div>         
+                    </li>
+                    <li>
+                        <div>
+                            <img src="picture/05885064496732751.png" alt=""><span>休闲零食</span>
+                        </div>
+                               
+                    </li>
+                    <li>
+                        <div>
+                            <img src="picture/05885064692739649.png" alt=""><span>粮油杂货</span>
+                        </div>     
+                    </li>
+                    <li>
+                        <div>
+                            <img src="picture/05885064881444846.png" alt=""><span>酒水饮品</span>
+                        </div>        
+                    </li>
+                    <li>
+                        <div>
+                            <img src="picture/05885065067612515.png" alt=""><span>名优特色馆</span>
+                        </div>     
+                    </li>
+                </ul>
+            </div>
+        <ul class="site-menu">
+            <li><a href="http://www.tujiago.com/" target="_blank">土家购</a></li>
+            <li><a href="http://www.snjgo.com/" target="_blank">神农架购</a></li>
+            <li><a href="http://www.hangowa.com/?act=special&op=show&special_id=117" target="_blank">仙岛云购</a></li>
+            <li><a href="http://www.hangowa.com/?act=special&op=show&special_id=112" target="_blank">洞庭云购</a></li>
+            <li><a href="http://www.lxjiaoyi.com/" target="_blank">洞庭云虾</a></li>
+        </ul>
+    </div>
+    </div> 
+
+
+
+
+
+    <!-- 头框 -->
+    <div class="egg-container">
+       <div class="egg-module">
+            <div class="egg-title">
+                <p><b>鸡蛋</b>&nbsp;&nbsp;&nbsp;搜索到<b>25</b>件相关商品</p>
+            </div>
+       </div>
+    </div> 
+       <!-- 商品列表 -->
+       <div class="egg-cont-list">
+           <nav class="goods-nav">
+               <div class="nav-sale">
+                    <ul>
+                        <li><a href="">默认</a></li>
+                        <li><a href="">销量</a></li>
+                        <li><a href="">人气</a></li>
+                        <li><a href="">价格</a></li>
+                    </ul>
+                </div>
+               <div class="nav-filter">
+                   <ul>
+                       <li><a href="">平台自营</a></li>
+                       <li><a href="">赠品</a></li>
+                       <li><a href="">7天退货</a></li>
+                       <li><a href="">品质承诺</a></li>
+                       <li><a href="">破损补寄</a></li>
+                       <li><a href="">急速物流</a></li>
+                   </ul>
+               </div>
+               <div class="goods-location">
+                   商品所在地:
+                   <select>
+                       <option value="">不限地区</option>
+                       <option value="">北京</option>
+                       <option value="">天津</option>
+                       <option value="">上海</option>
+                       <option value="">西安</option>
+                       <option value="">江苏</option>
+                       <option value="">广州</option>
+                       <option value="">河北</option>
+                   </select>
+               </div>
+               <div class="pagination">
+                   <ul>
+                       <li><span><</span></li>
+                       <li><span>></span></li>
+                   </ul>
+               </div>
+           </nav> 
+           <div class="goods-list">
+               <ul class="list-pic">
+                   <li>
+                       <div class="goods-content">
+                        <div class="goods-pic">
+                            <a href=""><img src="picture/223_05974240624274559_360.jpg" alt=""></a>
+                        </div>
+                        <div class="goods-detail">
+                            <div class="goods-price">
+                                <div class="sale-price"><span><b>￥</b>0.60</span></div>
+                                <div class="inline-price">￥1.50</div>
+                            </div>
+                            <div class="goods-name"><a href="">鸡蛋<span>1个</span></a></div>
+                            <div class="goods-info">
+                                <a class="goods-num" href="#">0</a>
+                                <a class="seller-name" href="#">汉购网实体线下店</a>
+                                </div>
+                            <div class="add-cart">
+                                <a href="">加入购物车</a>
+                            </div>
+                        </div>
+                    </div>
+                   </li>
+                   <li>
+                        <div class="goods-content">
+                            <div class="goods-pic">
+                                <a href=""><img src="picture/223_05971467001576922_360.jpg" alt=""></a>
+                            </div>
+                            <div class="goods-detail">
+                                <div class="goods-price">
+                                    <div class="sale-price"><span><b>￥</b>5.00</span></div>
+                                    <div class="inline-price">￥6.00</div>
+                                </div>
+                                <div class="goods-name"><a href=""><span>满香园鸡蛋挂面1000g</span></a></div>
+                                <div class="goods-info">
+                                    <a class="goods-num" href="#">0</a>
+                                    <a class="seller-name" href="#">汉购网实体线下店</a>
+                                </div>
+                                <div class="add-cart">
+                                    <a href="">加入购物车</a>
+                                </div>
+                            </div>
+                        </div>
+                   </li>
+                   <li>
+                        <div class="goods-content">
+                            <div class="goods-pic">
+                                <a href=""><img src="picture/223_05962132642181605_360.png" alt=""></a>
+                            </div>
+                            <div class="goods-detail">
+                                <div class="goods-price">
+                                    <div class="sale-price"><span><b>￥</b>4.00</span></div>
+                                    <div class="inline-price">￥6.90</div>
+                                </div>
+                                <div class="goods-name"><a href=""><span>金龙鱼爽滑鸡蛋挂面800g</span></a></div>
+                                <div class="goods-info">
+                                    <a class="goods-num" href="#">0</a>
+                                    <a class="seller-name" href="#">汉购网实体线下店</a>
+                                </div>
+                                <div class="add-cart">
+                                    <a href="">加入购物车</a>
+                                </div>
+                            </div>
+                        </div>
+                   </li>
+                   <li>
+                        <div class="goods-content">
+                            <div class="goods-pic">
+                                <a href=""><img src="picture/223_05961255308070331_360.jpg" alt=""></a>
+                            </div>
+                            <div class="goods-detail">
+                                <div class="goods-price">
+                                    <div class="sale-price"><span><b>￥</b>9.90</span></div>
+                                    <div class="inline-price">￥10.80</div>
+                                </div>
+                                <div class="goods-name"><a href=""><span>香满园鸡蛋挂面1000g（买一赠一）</span></a></div>
+                                <div class="goods-info">
+                                    <a class="goods-num" href="#">0</a>
+                                    <a class="seller-name" href="#">汉购网实体线下店</a>
+                                </div>
+                                <div class="add-cart">
+                                    <a href="">加入购物车</a>
+                                </div>
+                            </div>
+                        </div>
+                   </li>
+                   <li>
+                        <div class="goods-content">
+                            <div class="goods-pic">
+                                    <a href=""><img src="picture/171_05975951203751345_360.jpg" alt=""></a>
+                            </div>
+                            <div class="goods-detail">
+                                <div class="goods-price">
+                                    <div class="sale-price"><span><b>￥</b>20.60</span></div>
+                                    <div class="inline-price">￥25.90</div>
+                                </div>
+                                <div class="goods-name"><a href=""><span>农谷鲜鸡蛋变蛋20枚(单枚50-65g)</span></a></div>
+                                <div class="goods-info">
+                                    <a class="goods-num" href="#">0</a>
+                                    <a class="seller-name" href="#">汉购网实体线下店</a>
+                                </div>
+                                <div class="add-cart">
+                                    <a href="">加入购物车</a>
+                                </div>
+                            </div>
+                        </div>
+                   </li>
+                   <li>
+                        <div class="goods-content">
+                            <div class="goods-pic">
+                                    <a href=""><img src="picture/15_05974112943274374_360.jpg" alt=""></a>
+                            </div>
+                            <div class="goods-detail">
+                                <div class="goods-price">
+                                    <div class="sale-price"><span><b>￥</b>89.90</span></div>
+                                    <div class="inline-price">￥115.00</div>
+                                </div>
+                                <div class="goods-name"><a href=""><span>组合装（珍珠米5kg+花生油5L+土鸡蛋30枚)</span></a></div>
+                                <div class="goods-info">
+                                    <a class="goods-num" href="#">0</a>
+                                    <a class="seller-name" href="#">汉购网实体线下店</a>
+                                </div>
+                                <div class="add-cart">
+                                    <a href="">加入购物车</a>
+                                </div>
+                            </div>
+                        </div>
+                   </li>
+                   <li>
+                        <div class="goods-content">
+                            <div class="goods-pic">
+                                <a href=""><img src="picture/15_05974111726654185_360.jpg" alt=""></a>
+                            </div>
+                            <div class="goods-detail">
+                                <div class="goods-price">
+                                    <div class="sale-price"><span><b>￥</b>88.80</span></div>
+                                    <div class="inline-price">￥114.00</div>
+                                </div>
+                                <div class="goods-name"><a href=""><span>组合装（稻花香5kg+花生油5L+土鸡蛋30枚)</span></a></div>
+                                <div class="goods-info">
+                                    <a class="goods-num" href="#">0</a>
+                                    <a class="seller-name" href="#">汉购网实体线下店</a>
+                                </div>
+                                <div class="add-cart">
+                                    <a href="">加入购物车</a>
+                                </div>
+                            </div>
+                        </div>
+                   </li>
+                   <li>
+                        <div class="goods-content">
+                            <div class="goods-pic">
+                                <a href=""><img src="picture/15_05974109170964292_360.jpg" alt=""></a>
+                            </div>
+                            <div class="goods-detail">
+                                <div class="goods-price">
+                                    <div class="sale-price"><span><b>￥</b>59.90</span></div>
+                                    <div class="inline-price">￥65.90</div>
+                                </div>
+                                <div class="goods-name"><a href=""><span>组合装（稻花香5kg+土鸡蛋30枚)</span></a></div>
+                                <div class="goods-info">
+                                    <a class="goods-num" href="#">0</a>
+                                    <a class="seller-name" href="#">汉购网实体线下店</a>
+                                </div>
+                                <div class="add-cart">
+                                    <a href="">加入购物车</a>
+                                </div>
+                            </div>
+                        </div>
+                   </li>
+                   <li>
+                        <div class="goods-content">
+                            <div class="goods-pic">
+                                <a href=""><img src="picture/15_05302029700260299_240.jpg" alt=""></a>
+                            </div>
+                            <div class="goods-detail">
+                                <div class="goods-price">
+                                    <div class="sale-price"><span><b>￥</b>32.90</span></div>
+                                    <div class="inline-price">￥36.90</div>
+                                </div>
+                                <div class="goods-name"><a href=""><span>农谷鲜 新鲜散养农家土鸡蛋 30枚包邮 破蛋包赔（活动）</span></a></div>
+                                <div class="goods-info">
+                                    <a class="goods-num" href="#">29</a>
+                                    <a class="seller-name" href="#">汉购网实体线下店</a>
+                                </div>
+                                <div class="add-cart">
+                                    <a href="">加入购物车</a>
+                                </div>
+                            </div>
+                        </div>
+                   </li>
+                   <li>
+                        <div class="goods-content">
+                            <div class="goods-pic">
+                                <a href=""><img src="picture/10_05871384998498303_360.jpg" alt=""></a>
+                            </div>
+                            <div class="goods-detail">
+                                <div class="goods-price">
+                                    <div class="sale-price"><span><b>￥</b>28.00</span></div>
+                                    <div class="inline-price">￥35.00</div>
+                                </div>
+                                <div class="goods-name"><a href=""><span>新鲜散养鸡蛋20枚包邮</span></a></div>
+                                <div class="goods-info">
+                                    <a class="goods-num" href="#">0</a>
+                                    <a class="seller-name" href="#">汉购网实体线下店</a>
+                                </div>
+                                <div class="add-cart">
+                                    <a href="">加入购物车</a>
+                                </div>
+                            </div>
+                        </div>
+                   </li>
+                   <li>
+                        <div class="goods-content">
+                            <div class="goods-pic">
+                                <a href=""><img src="picture/171_05870550134474013_360.jpg" alt=""></a>
+                            </div>
+                            <div class="goods-detail">
+                                <div class="goods-price">
+                                    <div class="sale-price"><span><b>￥</b>27.00</span></div>
+                                    <div class="inline-price">￥36.00</div>
+                                </div>
+                                <div class="goods-name"><a href=""><span>统一 好劲道 鸡蛋面 （62g*28袋）麻辣味</span></a></div>
+                                <div class="goods-info">
+                                    <a class="goods-num" href="#">0</a>
+                                    <a class="seller-name" href="#">汉购网实体线下店</a>
+                                </div>
+                                <div class="add-cart">
+                                    <a href="">加入购物车</a>
+                                </div>
+                            </div>
+                        </div>
+                   </li>
+                   <li>
+                        <div class="goods-content">
+                            <div class="goods-pic">
+                                <a href=""><img src="picture/10_05844437950475711_360.jpg" alt=""></a>
+                            </div>
+                            <div class="goods-detail">
+                                <div class="goods-price">
+                                    <div class="sale-price"><span><b>￥</b>36.00</span></div>
+                                    <div class="inline-price">￥55.00</div>
+                                </div>
+                                <div class="goods-name"><a href=""><span>（贝店链）新鲜散养农家鸡蛋 20枚包邮</span></a></div>
+                                <div class="goods-info">
+                                    <a class="goods-num" href="#">0</a>
+                                    <a class="seller-name" href="#">汉购网实体线下店</a>
+                                </div>
+                                <div class="add-cart">
+                                    <a href="">加入购物车</a>
+                                </div>
+                            </div>
+                        </div>
+                   </li>
+                   <li>
+                        <div class="goods-content">
+                            <div class="goods-pic">
+                                <a href=""><img src="picture/15_05302029700260299_240.jpg" alt=""></a>
+                            </div>
+                            <div class="goods-detail">
+                                <div class="goods-price">
+                                    <div class="sale-price"><span><b>￥</b>28.00</span></div>
+                                    <div class="inline-price">￥35.00</div>
+                                </div>
+                                <div class="goods-name"><a href=""><span>新鲜散养鸡蛋20枚包邮</span></a></div>
+                                <div class="goods-info">
+                                    <a class="goods-num" href="#">29</a>
+                                    <a class="seller-name" href="#">汉购网实体线下店</a>
+                                </div>
+                                <div class="add-cart">
+                                    <a href="">加入购物车</a>
+                                </div>
+                            </div>
+                        </div>
+                   </li>
+                   <li>
+                        <div class="goods-content">
+                            <div class="goods-pic">
+                                <a href=""><img src="picture/187_05792824491192578_360.gif" alt=""></a>
+                            </div>
+                            <div class="goods-detail">
+                                <div class="goods-price">
+                                    <div class="sale-price"><span><b>￥</b>90.00</span></div>
+                                    <div class="inline-price">￥102.00</div>
+                                </div>
+                                <div class="goods-name"><a href=""><span>正宗农家土鸡蛋（50枚） 防摔抗压透气包装 新鲜鸡蛋  预售（48小时发货）</span></a></div>
+                                <div class="goods-info">
+                                    <a class="goods-num" href="#">0</a>
+                                    <a class="seller-name" href="#">汉购网实体线下店</a>
+                                </div>
+                                <div class="add-cart">
+                                    <a href="">加入购物车</a>
+                                </div>
+                            </div>
+                        </div>
+                   </li>
+                   <li>
+                        <div class="goods-content">
+                            <div class="goods-pic">
+                                <a href=""><img src="picture/15_05757311085639126_360.jpg" alt=""></a>
+                            </div>
+                            <div class="goods-detail">
+                                <div class="goods-price">
+                                    <div class="sale-price"><span><b>￥</b>32.90</span></div>
+                                    <div class="inline-price">￥39.00</div>
+                                </div>
+                                <div class="goods-name"><a href=""><span>白壳鸡蛋（空白包装）</span></a></div>
+                                <div class="goods-info">
+                                    <a class="goods-num" href="#">29</a>
+                                    <a class="seller-name" href="#">汉购网实体线下店</a>
+                                </div>
+                                <div class="add-cart">
+                                    <a href="">加入购物车</a>
+                                </div>
+                            </div>
+                        </div>
+                   </li>
+                   <li>
+                        <div class="goods-content">
+                            <div class="goods-pic">
+                                <a href=""><img src="picture/184_05787152983883443_360.png" alt=""></a>
+                            </div>
+                            <div class="goods-detail">
+                                <div class="goods-price">
+                                    <div class="sale-price"><span><b>￥</b>28.00</span></div>
+                                    <div class="inline-price">￥24.90</div>
+                                </div>
+                                <div class="goods-name"><a href=""><span>陈克明鸡蛋龙须面150g*10龙须面、长寿面、营养早餐</span></a></div>
+                                <div class="goods-info">
+                                    <a class="goods-num" href="#">0</a>
+                                    <a class="seller-name" href="#">汉购网实体线下店</a>
+                                </div>
+                                <div class="add-cart">
+                                    <a href="">加入购物车</a>
+                                </div>
+                            </div>
+                        </div>
+                   </li>
+                   <li>
+                        <div class="goods-content">
+                            <div class="goods-pic">
+                                <a href=""><img src="picture/10_05778778908299897_360.jpg" alt=""></a>
+                            </div>
+                            <div class="goods-detail">
+                                <div class="goods-price">
+                                    <div class="sale-price"><span><b>￥</b>36.00</span></div>
+                                    <div class="inline-price">￥56.00</div>
+                                </div>
+                                <div class="goods-name"><a href=""><span>鸡蛋 农家散养鸡蛋30枚包邮(天猫专享链)</span></a></div>
+                                <div class="goods-info">
+                                    <a class="goods-num" href="#">0</a>
+                                    <a class="seller-name" href="#">汉购网实体线下店</a>
+                                </div>
+                                <div class="add-cart">
+                                    <a href="">加入购物车</a>
+                                </div>
+                            </div>
+                        </div>
+                   </li>
+                   <li>
+                        <div class="goods-content">
+                            <div class="goods-pic">
+                                <a href=""><img src="picture/15_05757311085639126_360.jpg" alt=""></a>
+                            </div>
+                            <div class="goods-detail">
+                                <div class="goods-price">
+                                    <div class="sale-price"><span><b>￥</b>32.90</span></div>
+                                    <div class="inline-price">￥39.90</div>
+                                </div>
+                                <div class="goods-name"><a href=""><span>贝店  白壳鸡蛋30枚</span></a></div>
+                                <div class="goods-info">
+                                    <a class="goods-num" href="#">0</a>
+                                    <a class="seller-name" href="#">汉购网实体线下店</a>
+                                </div>
+                                <div class="add-cart">
+                                    <a href="">加入购物车</a>
+                                </div>
+                            </div>
+                        </div>
+                   </li>
+                   <li>
+                        <div class="goods-content">
+                            <div class="goods-pic">
+                                <a href=""><img src="picture/170_05689975975393408_360.jpg" alt=""></a>
+                            </div>
+                            <div class="goods-detail">
+                                <div class="goods-price">
+                                    <div class="sale-price"><span><b>￥</b>46.00</span></div>
+                                    <div class="inline-price">￥78.00</div>
+                                </div>
+                                <div class="goods-name"><a href=""><span>郧山.汉水 深山农家散养土鸡蛋20枚包邮</span></a></div>
+                                <div class="goods-info">
+                                    <a class="goods-num" href="#">0</a>
+                                    <a class="seller-name" href="#">汉购网实体线下店</a>
+                                </div>
+                                <div class="add-cart">
+                                    <a href="">加入购物车</a>
+                                </div>
+                            </div>
+                        </div>
+                   </li>
+                   <li>
+                        <div class="goods-content">
+                            <div class="goods-pic">
+                                <a href=""><img src="picture/170_05689975975393408_360.jpg" alt=""></a>
+                            </div>
+                            <div class="goods-detail">
+                                <div class="goods-price">
+                                    <div class="sale-price"><span><b>￥</b>36.00</span></div>
+                                    <div class="inline-price">￥48.00</div>
+                                </div>
+                                <div class="goods-name"><a href=""><span>郧山.汉水 深山农家散养土鸡蛋15枚包邮</span></a></div>
+                                <div class="goods-info">
+                                    <a class="goods-num" href="#">0</a>
+                                    <a class="seller-name" href="#">汉购网实体线下店</a>
+                                </div>
+                                <div class="add-cart">
+                                    <a href="">加入购物车</a>
+                                </div>
+                            </div>
+                        </div>
+                   </li>
+                   <li>
+                        <div class="goods-content">
+                            <div class="goods-pic">
+                                <a href=""><img src="picture/141_05499801258707669_360.png" alt=""></a>
+                            </div>
+                            <div class="goods-detail">
+                                <div class="goods-price">
+                                    <div class="sale-price"><span><b>￥</b>168.00</span></div>
+                                    <div class="inline-price">￥299.00</div>
+                                </div>
+                                <div class="goods-name"><a href=""><span>青石土鸡蛋60枚 散养土鸡蛋 有机饲料 质检报告可查土鸡散养、有机饲料、自然环境</span></a></div>
+                                <div class="goods-info">
+                                    <a class="goods-num" href="#">0</a>
+                                    <a class="seller-name" href="#">汉购网实体线下店</a>
+                                </div>
+                                <div class="add-cart">
+                                    <a href="">加入购物车</a>
+                                </div>
+                            </div>
+                        </div>
+                   </li>
+                   <li>
+                        <div class="goods-content">
+                            <div class="goods-pic">
+                                <a href=""><img src="picture/141_05499795242735376_360.png" alt=""></a>
+                            </div>
+                            <div class="goods-detail">
+                                <div class="goods-price">
+                                    <div class="sale-price"><span><b>￥</b>98.00</span></div>
+                                    <div class="inline-price">￥150.00</div>
+                                </div>
+                                <div class="goods-name"><a href=""><span>青石土鸡蛋60枚 散养土鸡蛋 有机饲料 质检报告可查土鸡散养、有机饲料、自然环境</span></a></div>
+                                <div class="goods-info">
+                                    <a class="goods-num" href="#">0</a>
+                                    <a class="seller-name" href="#">汉购网实体线下店</a>
+                                </div>
+                                <div class="add-cart">
+                                    <a href="">加入购物车</a>
+                                </div>
+                            </div>
+                        </div>
+                   </li>
+                   <li>
+                        <div class="goods-content">
+                            <div class="goods-pic">
+                                <a href=""><img src="picture/15_05855752595126923_240.jpg" alt=""></a>
+                            </div>
+                            <div class="goods-detail">
+                                <div class="goods-price">
+                                    <div class="sale-price"><span><b>￥</b>32.90</span></div>
+                                    <div class="inline-price">￥36.90</div>
+                                </div>
+                                <div class="goods-name"><a href=""><span>农谷鲜 新鲜散养农家土鸡蛋  30枚包邮 破蛋包赔【特惠包邮】</span></a></div>
+                                <div class="goods-info">
+                                    <a class="goods-num" href="#">0</a>
+                                    <a class="seller-name" href="#">汉购网实体线下店</a>
+                                </div>
+                                <div class="add-cart">
+                                    <a href="">加入购物车</a>
+                                </div>
+                            </div>
+                        </div>
+                   </li>
+                   <li>
+                        <div class="goods-content">
+                            <div class="goods-pic">
+                                <a href=""><img src="picture/95_05300379679918565_360.jpg" alt=""></a>
+                            </div>
+                            <div class="goods-detail">
+                                <div class="goods-price">
+                                    <div class="sale-price"><span><b>￥</b>128.00</span></div>
+                                    <div class="inline-price">￥199.00</div>
+                                </div>
+                                <div class="goods-name"><a href=""><span>土鸡蛋山林散养无公害绿壳蛋宝妈孕妇营养蛋60枚精美礼盒装</span></a></div>
+                                <div class="goods-info">
+                                    <a class="goods-num" href="#">0</a>
+                                    <a class="seller-name" href="#">汉购网实体线下店</a>
+                                </div>
+                                <div class="add-cart">
+                                    <a href="">加入购物车</a>
+                                </div>
+                            </div>
+                        </div>
+                   </li>
+               </ul>
+           </div>
+    
+
+    <!-- 分页 -->
+    <div class="tc">
+        <div class="pagination">
+            <ul>
+                <li><span>首页</span></li>
+                <li><span>上一页</span></li>
+                <li><span class="currentpage">1</span></li>
+                <li><span>2</span></li>
+                <li><span>下一页</span></li>
+                <li><span>末页</span></li>
+            </ul>
+        </div>
+    </div>
+</div>
+    <div class="hot">
+        <div class="title">
+            <h3>
+                <b>鸡蛋</b>分类下最热销的商品
+            </h3>
+        </div>
+        <div class="hot-sale">
+            <ul class="wwi-booth-list">
+                <li>
+                    <div class="goods-pic">
+                        <a href=""><img src="picture/15_05855752595126923_240.jpg" alt=""></a>
+                    </div>
+                    <div class="goods-name">
+                        <a href="">农谷鲜 新鲜散养农家土鸡蛋 30枚包邮 破蛋包赔</a>
+                    </div>
+                    <div class="goods-price">32.90
+                        <span>￥36.90</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="goods-pic">
+                        <a href=""><img src="picture/15_05855752595126923_240.jpg" alt=""></a>
+                    </div>
+                    <div class="goods-name">
+                        <a href="">农谷鲜 新鲜散养农家土鸡蛋 30枚包邮 破蛋包赔</a>
+                    </div>
+                    <div class="goods-price">32.90
+                        <span>￥36.90</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="goods-pic">
+                        <a href=""><img src="picture/15_05855752595126923_240.jpg" alt=""></a>
+                    </div>
+                    <div class="goods-name">
+                        <a href="">农谷鲜 新鲜散养农家土鸡蛋 30枚包邮 破蛋包赔</a>
+                    </div>
+                    <div class="goods-price">32.90
+                        <span>￥36.90</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="goods-pic">
+                        <a href=""><img src="picture/15_05855752595126923_240.jpg" alt=""></a>
+                    </div>
+                    <div class="goods-name">
+                        <a href="">农谷鲜 新鲜散养农家土鸡蛋 30枚包邮 破蛋包赔</a>
+                    </div>
+                    <div class="goods-price">32.90
+                        <span>￥36.90</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="goods-pic">
+                        <a href=""><img src="picture/15_05855752595126923_240.jpg" alt=""></a>
+                    </div>
+                    <div class="goods-name">
+                        <a href="">农谷鲜 新鲜散养农家土鸡蛋 30枚包邮 破蛋包赔</a>
+                    </div>
+                    <div class="goods-price">32.90
+                        <span>￥36.90</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="wwi-module"></div>
+        <div class="hot">
+            <div class="title">
+                <h3>
+                    <b>最近浏览</b>你最近一段时间浏览的商品
+                </h3>
+            </div>
+            <div class="hot-sale">
+                <ul class="wwi-booth-list">
+                    <li>
+                        <div class="goods-pic">
+                            <a href=""><img src="picture/187_05792824491192578_360.gif" alt=""></a>
+                        </div>
+                        <div class="goods-name">
+                            <a href="">农谷鲜 新鲜散养农家土鸡蛋 30枚包邮 破蛋包赔</a>
+                        </div>
+                        <div class="goods-price">32.90
+                            <span>￥36.90</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    
+</body>
+</html>

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <style>
+#reg{
+    width:100%;   
+}
+.public-head-layout .lf{
+    margin: 10px 0 0 0;
+    background: #fff;
+    border-radius: 50px;
+    height: 130px;
+}
+.public-head-layout .rf{
+    font-size: 14px;
+    color: #AAA;
+    line-height: 24px;
+    float: right;
+    height: 24px;
+    margin-top: 50px;
+}
+.public-head-layout{
+    justify-content: space-around;
+}
+.regs{
+    border:1px solid #999;
+}
+.content {
+    background: #FAFAFA;
+    width: 100%;
+    height: 680px;
+    overflow: hidden;
+}
+.register-layout{
+    background-color: #FFF;
+    display: block;
+    width: 820px;
+    height: 520px;
+    padding: 19px;
+    border:  10px solid #CCC;
+    overflow: hidden;
+    margin:0 auto;
+    margin-top: 63px;
+}
+td{
+    background-color: #FFF;
+    width: 450px;
+    height: 52px;
+    margin-top: -1px;
+    border: 1px solid #E6E6E6;
+    position: relative;
+    z-index: 1;
+    font-size: 14px;
+}
+
+td .text{
+    width:300px;
+    border:none;
+}
+.register-layout .col-3{
+    width: 200px;
+    height: 500px;
+    float: right;
+    padding: 20px 0 0 19px;
+    border-left: 1px solid #E6E6E6;
+    justify-content: center;
+}
+.col div h4{
+    font-size: 14px;
+    line-height: 20px;
+    height: 20px;
+    margin-bottom: 20px;
+    color: #333;
+    }
+.col div li{
+    font-size: 12px;
+    color: #999;
+    line-height: 24px;
+    margin-bottom: 10px;
+    padding-left: 12px;
+    }
+.btn{
+    font-family: "microsoft yahei";
+    font-size: 16px;
+    font-weight: 600;
+    color: #FFF;
+    background-color: #F32613;
+    width: 398px;
+    height: 42px;
+    border: solid 1px #D91E17;
+    border-radius: 3px;
+    }
+.wrapper{
+    width: 1200px;
+    width: 1200px!important;
+    margin:0 auto;
+}
+.wrapper p{
+    color:#666;
+    font-size: 12px;
+}
+.wrapper a{
+    color:#666;
+    font-size: 12px;
+}
+    </style>
+</head>
+<body>
+    <div id="header-wrap">
+        <header class="public-head-layout d-flex">
+            <div class="lf">
+                <a href=""><img src="picture/05866942534214961.png" alt=""></a>
+            </div>
+            <div class="rf">
+                我已经注册，现在就<a href="login.html">登录</a>
+            </div>
+        </header>
+    </div>
+    <div class="content">
+        <div class="register-layout">
+            
+            <ul class="nav nav-tab list-unstyled">
+                <li class="nav-item"><a class="nav-link active" href="#tab1" data-toggle="tab">账号注册<i></i></a></li>
+                <li class="nav-item"><a class="nav-link" href="#tab2" data-toggle="tab">手机注册<i></i></a></li>
+            </ul>
+            <hr>
+            <div class="row">
+                <div class="col col-9">
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="tab1">
+                            <table class="regs">
+                            <tr>
+                                <td colspan='2'>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;用户名： <input type="text" class="text" name="upwd" placeholder="请使用3-15个中、英文、数字及“-”符号">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan='2'>
+                                    设置密码： <input type="text" class="text" placeholder="6-20个大小写英文字母、符号或数字">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan='2'>
+                                    确认密码： <input type="text" class="text" placeholder="请再次输入密码">
+                                </td>
+                            </tr> 
+                            <tr>  
+                                <td colspan='2'>
+                                    邮&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;箱： <input type="text" class="text" placeholder="输入常用邮箱作为验证及找回密码使用">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan='2'>
+                                    <input name="agree" type="checkbox" value="1" checked="checked">阅读并同意<a href="">《服务协议》</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan='2'>
+                                    <input type="button" type="submit" value="立即注册" class="btn">
+                                </td>
+                            </tr>    
+                        </table>
+                    </div>
+                
+                        <div class="tab-pane" id="tab2">
+                            <table class="regs">
+                            <tr>
+                                <td colspan='2'>
+                                    手机号码: <input type="text" class="text" placeholder="请输入手机号">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan='2'>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;验证码： <input type="text" class="text" placeholder="输入4位验证码">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan='2'>
+                                    <input name="agree" type="checkbox" value="1" checked="checked">阅读并同意<a href="">《服务协议》</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan='2'>
+                                    <input type="button" type="button" value="获取验证码" class="btn">
+                                </td>
+                            </tr>    
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+              
+                <div class="col col-3">
+                    <div>
+                        <div class="api-login">
+                            <h4>使用合作网站账号直接登录</h4>
+                                <a href="#"><i></i></a>
+                        </div>
+                            <div class="reister-after">
+                                <h4>注册之后您可以</h4>
+                                <ul class="list-unstyled">
+                                    <li class="ico01"><i></i>购买商品支付订单</li>
+                                    <li class="ico02"><i></i>收藏商品关注店铺</li>
+                                    <li class="ico03"><i></i>安全交易诚信无忧</li>
+                                    <li class="ico04"><i></i>积分获取优惠购物</li>
+                                    <li class="ico05"><i></i>会员等级享受特权</li>
+                                    <li class="ico06"><i></i>评价晒单站外分享</li>
+                                </ul>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+        <div>
+            <div class="wrapper d-flex">
+                <div>
+                    <a href=""><img src="picture/credit-flag3.png" alt=""></a>
+                    <a href=""><img src="picture/isc2.png" alt=""></a>
+                </div>
+                <div>
+                    <p>
+                        <a href="">返回首页</a><b>|</b>
+                        <a href="">商家入驻</a><b>|</b>
+                        <a href="">联系我们</a><b>|</b>
+                        <a href="">关于汉购网</a><b>|</b>
+                        <a href="">火凤凰云</a><b>|</b>
+                        <a href="">友情链接</a><b>|</b>
+                    </p>
+                    <p>
+                        &copy;2005-2018 火凤凰农商互联科技（湖北）有限公司版权所有，并保留所有权利
+                    </p>
+                </div>
+            </div>
+        </div>
+</body>
+</html>

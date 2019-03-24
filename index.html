@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title> 
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/header.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/super_slider.js"></script>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/index.css">
+    <style>
+     #slider{
+      width:789px; height:450px;
+      position:relative;
+    }
+    #slider>img{
+        width:789px;;
+        height:450px;
+        left:180px;
+      position:absolute;
+      opacity:0;
+      transition:all .5s linear;
+    }
+    #slider>img.show{  opacity:1; z-index:10 }
+    </style>
+</head>
+
+<body>
+    <!-- <div id="header">
+        <div id="main">
+            <div class="width">
+                <div class="main-left">
+                    <div>您好，欢迎来到
+                        <a href="">汉购网</a>
+                        <span class="login-link">
+                            <a href="login.html">请登录</a>
+                        </span>
+                        <span class="login-link">
+                            <a href="reg.html">立即注册</a>
+                        </span>
+                    </div>
+                </div>
+                <div class="main-right d-flex">
+                    <dl class="t-cart">
+                        <div class="con-cart">
+                            <a target="_self" href="" class="cart-btn">
+                                <span>购物车</span>
+                                <em class="cart-num" id="top-cart-count">0</em>件
+                            </a>
+                        </div>
+                    </dl>
+                    <dl><dt><a href="">商家入驻</a></dt></dl>
+                    <dl class="hover-event">
+                        <dt><a href="javascript:;" target="_blank">我的订单</a></dt>
+                        <dd>
+                            <ul class="list-unstyled">
+                                <li><a href="" target="_blank">待付款订单</a></li>
+                                <li><a href="" target="_blank">待确认收货</a></li>
+                                <li><a href="" target="_blank">待评价交易</a></li>
+                            </ul>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt><a href="">个人中心</a></dt>
+                    </dl>
+                    <dl class="hover-event">
+                        <dt>客户服务</dt>
+                         <dd>
+                            <ul class="list-unstyled">
+                                <li><a href="">帮助中心</a></li>
+                                <li><a href="">售后服务</a></li>
+                                <li><a href="">客服中心</a></li>
+                            </ul>
+                        </dd> 
+                    </dl>
+                    <dl class="weixin hover-event">
+                        <dt>关注我们</dt>
+                        <dd>
+                            <p>扫描二维码</p>
+                            <img src="">
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <!--  
+    <div class="header-wrap">
+        <header class="public-head-layout wrapper clearfix">
+            <h1 class="site-logo">
+                <a href="http://www.hangowa.com">
+                    <img src="picture/05866942534214961.png" class="pngFix">
+                </a>
+            </h1>
+        <div class="logo-test"></div>
+    <div class="head-search-layout">
+        <div class="head-search-bar" id="head-search-bar">
+            <form action="" method="get" class="search-form clearfix" id="top_search_form">
+                <div class="search-icon"></div>
+                <input name="act" id="search_act" value="search" type="hidden">
+                <input id="keyword" type="text" value="农谷鲜" placeholder="请输入您要搜索的商品关键字"/>
+                <input type="submit" id="button" value="搜索" class="input-submit">
+            </form>
+            <div class="search-tip" id="search-tip">
+                <div class="search-history">
+                    <div class="title">历史纪录<a href="javascript:;" id="search-his-del">清除</a></div>
+                        <ul id="search-his-list" class="list-unstyled d-flex">
+                             <li>
+                                <a href="">豆皮</a>
+                            </li>
+                            <li>
+                                <a href="">农谷鲜</a>
+                            </li>
+                             <li>
+                                <a href="">土豆</a>
+                            </li>
+                            <li>
+                                <a href="">苹果</a>
+                            </li>
+                        </ul>
+                    </div>
+                     <div class="search-hot">
+                        <div class="title">热门搜索...</div>
+                        <ul class="list-unstyled">
+                            <li>
+                                <a href="">农谷鲜</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div> 
+            <div class="keyword">
+                <ul class="list-unstyled d-flex">
+                    <li>
+                        <a href="">鸡蛋</a>
+                    </li>
+                    <li>
+                        <a href="">豆皮</a>
+                    </li>
+                    <li>
+                        <a href="">苹果</a>
+                    </li>
+                    <li>
+                        <a href="">土豆</a>
+                    </li>
+                    <li>
+                        <a href="">米</a>
+                    </li>
+                    <li>
+                        <a href="">油</a>
+                    </li>
+                                    <li>
+                        <a href="">热干面</a>
+                    </li>
+                    <li>
+                        <a href="">龙虾</a>
+                    </li>
+                    <li>
+                        <a href="">锅巴</a>
+                    </li>
+                    <li>
+                        <a href="">罐头</a>
+                    </li>
+                    <li>
+                        <a href="">夏橙</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+</div>-->
+<iframe class="my_head" src="header.html" frameborder="0" scrolling="no"></iframe>
+    <nav class="public-nav-layout">
+        <div class="wrappers">
+
+            <div class="all-category">
+                <div class="title">
+                    <a href="javascript:video(0)">所有商品分类</a><i></i>
+                </div>
+                <div class="catagory">
+                    <ul class="menu list">
+                        <li>
+                            <div class="class">
+                                <div class="class-icon">
+                                    <span class="ico"><img src="picture/05885064124529864.png" style="margin-left: 0px;" alt="">
+                                    </span>
+                                </div>
+                            <h4><a href="" style="color:#000;font-size:14px">生鲜水果</a></h4>
+                            <span class="arrow"></span>
+                        </div>
+                        </li>
+                        <li>
+                            <div class="class">
+                                <div class="class-icon">
+                                    <span class="ico"><img src="picture/05885064332222891.png" alt="">
+                                    </span>
+                                </div>
+                            
+                            <h4><a href="" style="color:#000;font-size:14px">蛋奶速食</a></h4>
+                            <span class="arrow"></span>
+                        </div>
+                        </li>
+                        <li>
+                            <div class="class">
+                                <div class="class-icon">
+                                    <span class="ico">
+                                <img src="picture/05885064496732751.png" alt=""></span>
+                            </div>
+                            <h4><a href="" style="color:#000;font-size:14px">休闲零食</a></h4>
+                            <span class="arrow"></span>
+                        </div>
+                        </li>
+                        <li>
+                            <div class="class">
+                                <div class="class-icon">
+                                    <span class="ico">
+                                <img src="picture/05885064692739649.png" alt=""></span>
+                            </div>
+                            <h4><a href="" style="color:#000;font-size:14px">粮油杂货</a></h4>
+                            <span class="arrow"></span>
+                        </div>
+                        </li>
+                        <li>
+                            <div class="class">
+                                <div class="class-icon">
+                                    <span class="ico">
+                                <img src="picture/05885064881444846.png" alt=""></span>
+                            </div>
+                            <h4><a href="" style="color:#000;font-size:14px">酒水饮品</a></h4>
+                            <span class="arrow"></span>
+                        </div>
+                        </li>
+                        <li>
+                            <div class="class">
+                                <div class="class-icon">
+                                    <span class="ico">
+                                <img src="picture/05885065067612515.png" alt=""></span>
+                            </div>
+                            <h4><a href="" style="color:#000;font-size:14px">名优特色馆</a></h4>
+                            <span class="arrow"></span>
+                        </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <ul class="site-menu">
+                    <li><a href="http://www.tujiago.com/" target="_blank">土家购</a></li>
+                    <li><a href="http://www.snjgo.com/" target="_blank">神农架购</a></li>
+                    <li><a href="http://www.hangowa.com/?act=special&op=show&special_id=117" target="_blank">仙岛云购</a></li>
+                    <li><a href="http://www.hangowa.com/?act=special&op=show&special_id=112" target="_blank">洞庭云购</a></li>
+                    <li><a href="http://www.lxjiaoyi.com/" target="_blank">洞庭云虾</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div style="position:relative;width:1200px;margin:auto">
+        <div style="position:absolute;left:-360px;">
+            <img src="picture/ch_01.png" alt="">
+        </div>
+        <div style="position:absolute;right:-360px;">
+            <img src="picture/ch_02.png" alt="">
+        </div>
+   
+    
+        <!-- <div id="mycar" class="carousel" data-ride="carousel"> -->
+           <!--  <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <a href="#">
+                        <img src="picture/banner1.jpg" alt=""/>
+                    </a>
+                </div>
+                <div class="carousel-item">
+                    <a href="#">
+                        <img src="picture/banner2.jpg" alt=""/>
+                    </a>
+                </div>
+                <div class="carousel-item">
+                    <a href="#">
+                        <img src="picture/banner3.jpg" alt=""/>
+                    </a>
+                </div>
+                <div class="carousel-item">
+                    <a href="#">
+                        <img src="picture/banner4.jpg" alt=""/>
+                    </a>
+                </div>
+                <a href="#mycar" class="carousel-control-prev" data-slid="prev">
+                    <span class="carousel-control-prev-icon"></span> 
+                </a>
+                <a href="#mycar" class="carousel-control-next" data-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </a> -->
+                <div id="slider">
+                    <img src="picture/banner1.jpg" class="show" alt=""/>
+                    <img src="picture/banner2.jpg" alt=""/>
+                    <img src="picture/banner3.jpg" alt=""/>
+                    <img src="picture/banner4.jpg" alt=""/>
+                  </div>
+                 
+                <!-- 指示器-->
+                <ul class="carousel-indicators">
+                    <li  class="active" data-slide-to="0" data-target="#sliderr"></li>
+                    <li data-slide-to="1" data-target="#slider"></li>
+                    <li data-slide-to="2" data-target="#slider"></li>
+                    <li data-slide-to="3" data-target="#slider"></li>
+                </ul>
+            <!-- </div> -->
+        
+        <div class="suspend-box">
+            <div class="right-con">
+                <div class="user-info">
+                    <div class="avater">
+                        <a href=""></a>
+                    </div>
+                    <div class="login-info">
+                        <div>
+                            <img src="picture/default_user_portrait.gif"alt="">
+                        </div>
+                        <div>
+                        <div>
+                            <div style="padding:10px 0; font-size:14px; color:#666;">hi!,欢迎来到<a href="http://www.hangowa.com/" style="color:#555">汉购网</a></div>
+                                <span style="text-align:center; font-size:12px; color:#999;">登录/注册</span>
+                            </div>
+                        </div>
+                    </div>
+                        <div class="Palace-list">
+                            <ul class="list-unstyled">
+                                <li><img src="picture/01_login_icon.png" alt=""><a href="">登录注册</a></li>
+                                <li><img src="picture/02_mine_icon.png" alt=""><a href="">个人中心</a></li>
+                                <li><img src="picture/03_wallet_icon.png" alt=""><a href="">账户余额</a></li>
+                                <li><img src="picture/04_card_icon.png" alt=""><a href="">充值系统</a></li>
+                            </ul>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function task(){
+            //查找现在class为show的img
+            var img=slider.getElementsByClassName("show")[0];
+            img.className="";
+            //如果img有下一个兄弟
+            if(img.nextElementSibling)
+            //设置img的下一个兄弟的class为show
+            img.nextElementSibling.className="show";
+            else//否则
+            //设置img的父元素的第一个孩子的className为show
+            img.parentNode.children[0].className="show"
+            }
+            var timer=setInterval(task,2000);
+    </script>
+    
+    <!-- 限时活动 -->
+    <div class="outermost">
+        <div class="wrapper">
+    <div class="xshd">
+        <div class="title">
+            <img src="picture/xshd_icon.png" alt=""><strong>限时活动</strong><p>总有你意想不到的价</p>
+        </div>
+        <div class="content row">
+            <div class="cont-left col-4">
+                <a href="#"><img src="picture/web-632-702-1.jpg" alt=""></a>
+            </div>
+            <div class="cont-right col-8">
+                <div>
+                    <ul class="list-unstyled d-flex">
+                        <li><a href="#"><img src="picture/web-632-702-2.jpg" alt=""></a></li>
+                        <li><a href="#"><img src="picture/web-632-702-3.jpg" alt=""></a></li>
+                    </ul>
+                </div>
+                <div>
+                    <ul class="list-unstyled d-flex">
+                        <li><a href="#"><img src="picture/web-632-702-4.jpg" alt=""></a></li>
+                        <li><a href="#"><img src="picture/web-632-702-5.jpg" alt=""></a></li>
+                        <li><a href="#"><img src="picture/web-632-702-6.jpg" alt=""></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 新品推荐 -->
+    <div class="xptj">
+        <div class="newshop-title">
+            <img src="picture/xptj_icon.png" alt=""><strong>新品推荐</strong><p>火爆新品有你想要</p>
+        </div>
+            <ul class="goods-list list-unstyled d-flex">
+                <li><a href=""><img src="picture/138_05950061125693969_240.jpg" alt=""></a>
+                    <div class="goods-info">
+                        <div class="goods-detail">
+                            <a>神农架高山萝卜 新鲜水果萝卜 神农架特产新鲜蔬菜</a> 
+                        </div>
+                        <div class="price">
+                            <span class="current-price">￥15.90</span>
+                            <span class="original-price">￥25.90</span>
+                        </div>
+                    </div>
+                </li>
+                <li><a href=""><img src="picture/15_05953361939874622_240.jpg" alt=""></a>
+                    <div class="goods-info">
+                        <div class="goods-detail">
+                            <a>红心猕猴桃24枚（单果约100·110g) 包邮"</a> 
+                        </div>
+                        <div class="price">
+                            <span class="current-price">￥51.90</span>
+                            <span class="original-price">￥57.90</span>
+                        </div>
+                    </div>
+                </li>
+                <li><a href=""><img src="picture/216_05937774002155524_240.jpg" alt=""></a>
+                    <div class="goods-info">
+                        <div class="goods-detail">
+                            <a>庄浪红富士苹果24枚装70mm全国包邮</a> 
+                        </div>
+                        <div class="price">
+                            <span class="current-price">￥31.00</span>
+                            <span class="original-price">￥49.00</span>
+                        </div>
+                    </div>
+                </li>
+                <li><a href=""><img src="picture/219_05953487363415467_240.jpg" alt=""></a>
+                    <div class="goods-info">
+                        <div class="goods-detail">
+                            <a>深湖野藕湖北特产洪湖莲藕新鲜粉藕5斤</a> 
+                        </div>
+                        <div class="price">
+                            <span class="current-price">￥39.90</span>
+                            <span class="original-price">￥49.90</span>
+                        </div>
+                    </div>
+                </li>
+                <li><a href=""><img src="picture/10_05933463858199886_240.jpg" alt=""></a>
+                    <div class="goods-info">
+                        <div class="goods-detail">
+                            <a>四川眉山爱媛新鲜橘桔子12枚4.5-5斤包邮</a> 
+                        </div>
+                        <div class="price">
+                            <span class="current-price">￥42.90</span>
+                            <span class="original-price">￥55.00</span>
+                        </div>
+                    </div>
+                </li>
+                <li><a href=""><img src="picture/15_05925001341513628_240.jpg" alt=""></a>
+                    <div class="goods-info">
+                        <div class="goods-detail">
+                            <a>厨道玉米油1.8L</a> 
+                        </div>
+                        <div class="price">
+                            <span class="current-price">￥28.50</span>
+                            <span class="original-price">￥35.90</span>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+    </div>
+    <!--农谷鲜-->
+    <div class="ngx">
+        <div class="ngx-title">
+            <img src="picture/ngxtb_icon.png" alt=""><p>健康新鲜又美味</p>
+        </div>
+        <div class="ngx-cont">
+            <div class="ngx-cont-left">
+                <div>
+                    <ul class="list-unstyled d-flex">
+                        <li><img src="picture/web-633-706-1.jpg" alt=""></li>
+                        <li><img src="picture/web-633-706-2.jpg" alt=""></li>
+                        <li><img src="picture/web-633-706-3.jpg" alt=""></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="ngx-cont-right">
+                <a href=""><img src="picture/web-633-706-5.jpg" alt=""></a>
+            </div>
+        </div>
+    </div>
+    <!--汉美特-->
+    <!-- <div class="hmt">
+        <div class="hmt-title">
+            <img src="picture/hmttb_icon.png" alt=""><p>有情有味汉美特</p>
+        </div>
+        <div class="hmt-cont">
+            <div class="hmt-cont-left">
+                <a href=""><img src="picture/web-634-710-1.jpg" alt=""></a>
+            </div>
+            <div class="hmt-cont-right">
+                <div>
+                    <ul class="list-unstyled d-flex">
+                        <li><img src="picture/web-634-710-2.jpg" alt=""></li>
+                        <li><img src="picture/web-634-710-3.jpg" alt=""></li>
+                        <li><img src="picture/web-634-710-4.jpg" alt=""></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <div class="hmt">
+        <div class="hmt-title">
+            <img src="picture/hmttb_icon.png"/>
+            <h4>有情有味汉美特</h4>
+        </div>
+        <div class="hmt-cont">
+            <div class="hmt-cont-left">
+                <a target="_blank" href="javascript:void(0);"><img src="picture/web-634-710-1.jpg" /></a>
+            </div>
+            <div class="hmt-cont-right">
+                <div id="hmt-scroll-list" style="position:relative">
+                    <a href="javascript:;" class="scroll-btn hmt-prev">
+                        <img src="picture/lefticon.png"/>
+                    </a>
+                    <a href="javascript:;" class="scroll-btn hmt-next">
+                        <img src="picture/righticon.png"/>
+                    </a>
+                    <ul id="scroll-list list-unstyled d-flex">
+                                                <li>
+                                <a target="_blank" href=""><img src="picture/web-634-710-3.jpg" /></a>
+                            </li>
+                                                <li>
+                                <a target="_blank" href=""><img src="picture/web-634-710-4.jpg" /></a>
+                            </li>
+                                                <li>
+                                <a target="_blank" href=""><img src="picture/web-634-710-2.jpg" /></a>
+                            </li>
+                                        </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--楼层-->
+    <div class="home-floor">
+        <!--一楼-->
+        <div class="home-standard-layout">
+            <div class="left-siderbar">
+                <div class="left-title">
+                    <img src="picture/web-1-41.png" alt="">
+                    <a href="">粮油杂货</a>
+                </div>
+                <div class="middle-layout">
+                    <div class="right-side-focus">
+                        <img src="picture/web-4-48-1.jpg" alt="">
+                    </div>
+                    <div class="tabs-panel middle-goods-list ">
+                        <ul class="clearfix">
+                            <li>
+                                <dl>
+                                    <dd><a href="#"><img src="picture/web-4-48-2.jpg" alt=""></a></dd>
+                                    <dt><a href="#"></a>黄晓油面（精装）120g 手工面条 湖北特产 口感纯正</dt>
+                                    <dd><span class="price-now">￥19.80</span><span class="original-price">￥19.80</span></dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dd><a href="#"><img src="picture/web-4-48-3.png" alt=""></a></dd>
+                                    <dt><a href="#">黄晓油面（精装）120g 手工面条 湖北特产 口感纯正</a></dt>
+                                    <dd><span class="price-now">￥19.80</span><span class="original-price">￥19.80</span></dd>
+                                </dl>
+                            </li>
+                            <div class="medium-pic">
+                                <img src="picture/web-4-48-4.jpg" alt="">
+                                <a href="#">黄晓油面（精装）120g 手工面条 湖北特产 口感纯正</a>
+                            </div>
+                            <li>
+                                <dl>
+                                    <dd><a href="#"><img src="picture/web-4-48-5.jpg" alt=""></a></dd>
+                                    <dt><a href="#">黄晓油面（精装）120g 手工面条 湖北特产 口感纯正</a></dt>
+                                    <dd><span class="price-now">￥19.80</span><span class="original-price">￥19.80</span></dd>
+                                </dl>
+                            </li>
+                            </ul>
+                            <ul class="clearfix d-flex">
+                            <li>
+                                <dl>
+                                    <dd><a href="#"><img src="picture/web-4-48-6.jpg" alt=""></a></dd>
+                                    <dt><a href="#">黄晓油面（精装）120g 手工面条 湖北特产 口感纯正</a></dt>
+                                    <dd><span class="price-now">￥19.80</span><span class="original-price">￥19.80</span></dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dd><a href="#"><img src="picture/web-4-48-7.jpg" alt=""></a></dd>
+                                    <dt><a href="#">黄晓油面（精装）120g 手工面条 湖北特产 口感纯正</a></dt>
+                                    <dd><span class="price-now">￥19.80</span><span class="original-price">￥19.80</span></dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dd><a href="#"><img src="picture/web-4-48-8.jpg" alt=""></a></dd>
+                                    <dt><a href="#">黄晓油面（精装）120g 手工面条 湖北特产 口感纯正</a></dt>
+                                    <dd><span class="price-now">￥19.80</span><span class="original-price">￥19.80</span></dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dd><a href="#"><img src="picture/web-4-48-9.jpg" alt=""></a></dd>
+                                    <dt><a href="#">黄晓油面（精装）120g 手工面条 湖北特产 口感纯正</a></dt>
+                                    <dd><span class="price-now">￥19.80</span><span class="original-price">￥19.80</span></dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dd><a href="#"><img src="picture/web-4-48-10.jpg" alt=""></a></dd>
+                                    <dt><a href="#">黄晓油面（精装）120g 手工面条 湖北特产 口感纯正</a></dt>
+                                    <dd><span class="price-now">￥19.80</span><span class="original-price">￥19.80</span></dd>
+                                </dl>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--2楼-->
+        <div class="home-standard-layout">
+            <div class="left-siderbar">
+                <div class="left-title">
+                    <img src="picture/web-2-11.png" alt="">
+                    <a href="">生鲜果蔬</a>
+                </div>
+                <div class="middle-layout">
+                    <div class="right-side-focus">
+                        <img src="picture/web-1-18-1.jpg" alt="">
+                    </div>
+                    <div class="tabs-panel middle-goods-list ">
+                        <ul class="clearfix">
+                            <li>
+                                <dl>
+                                    <dd><a href="#"><img src="picture/web-1-18-2.jpg" alt=""></a></dd>
+                                    <dt><a href="#"></a>黄晓油面（精装）120g 手工面条 湖北特产 口感纯正</dt>
+                                    <dd><span class="price-now">￥19.80</span><span class="original-price">￥19.80</span></dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dd><a href="#"><img src="picture/web-1-18-3.jpg" alt=""></a></dd>
+                                    <dt><a href="#">黄晓油面（精装）120g 手工面条 湖北特产 口感纯正</a></dt>
+                                    <dd><span class="price-now">￥19.80</span><span class="original-price">￥19.80</span></dd>
+                                </dl>
+                            </li>
+                            <div class="medium-pic">
+                                <img src="picture/web-1-18-4.jpg" alt="">
+                                <a href="">黄晓油面（精装）120g 手工面条 湖北特产 口感纯正</a>
+                            </div>
+                            <li>
+                                <dl>
+                                    <dd><a href="#"><img src="picture/web-1-18-5.jpg" alt=""></a></dd>
+                                    <dt><a href="#">黄晓油面（精装）120g 手工面条 湖北特产 口感纯正</a></dt>
+                                    <dd><span class="price-now">￥19.80</span><span class="original-price">￥19.80</span></dd>
+                                </dl>
+                            </li>
+                            </ul>
+                            <ul class="clearfix d-flex">
+                            <li>
+                                <dl>
+                                    <dd><a href="#"><img src="picture/web-1-18-6.jpg" alt=""></a></dd>
+                                    <dt><a href="#">黄晓油面（精装）120g 手工面条 湖北特产 口感纯正</a></dt>
+                                    <dd><span class="price-now">￥19.80</span><span class="original-price">￥19.80</span></dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dd><a href="#"><img src="picture/web-1-18-7.jpg" alt=""></a></dd>
+                                    <dt><a href="#">黄晓油面（精装）120g 手工面条 湖北特产 口感纯正</a></dt>
+                                    <dd><span class="price-now">￥19.80</span><span class="original-price">￥19.80</span></dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dd><a href="#"><img src="picture/web-1-18-8.jpg" alt=""></a></dd>
+                                    <dt><a href="#">黄晓油面（精装）120g 手工面条 湖北特产 口感纯正</a></dt>
+                                    <dd><span class="price-now">￥19.80</span><span class="original-price">￥19.80</span></dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dd><a href="#"><img src="picture/web-1-18-9.jpg" alt=""></a></dd>
+                                    <dt><a href="#">黄晓油面（精装）120g 手工面条 湖北特产 口感纯正</a></dt>
+                                    <dd><span class="price-now">￥19.80</span><span class="original-price">￥19.80</span></dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dd><a href="#"><img src="picture/web-1-18-10.jpg" alt=""></a></dd>
+                                    <dt><a href="#">黄晓油面（精装）120g 手工面条 湖北特产 口感纯正</a></dt>
+                                    <dd><span class="price-now">￥19.80</span><span class="original-price">￥19.80</span></dd>
+                                </dl>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--3楼-->
+        <div class="home-standard-layout">
+            <div class="left-siderbar">
+                <div class="left-title">
+                    <img src="picture/web-3-31.png" alt="">
+                    <a href="">休闲零食</a>
+                </div>
+                <div class="middle-layout">
+                    <div class="right-side-focus">
+                        <img src="picture/web-3-38-1.jpg" alt="">
+                    </div>
+                    <div class="tabs-panel middle-goods-list ">
+                        <ul class="clearfix">
+                            <li>
+                                <dl>
+                                    <dd><a href="#"><img src="picture/web-3-38-2.jpg" alt=""></a></dd>
+                                    <dt><a href=""></a>黄晓油面（精装）120g 手工面条 湖北特产 口感纯正</dt>
+                                    <dd><span class="price-now">￥19.80</span><span class="original-price">￥19.80</span></dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dd><a href="#"><img src="picture/web-3-38-3.jpg" alt=""></a></dd>
+                                    <dt><a href="">黄晓油面（精装）120g 手工面条 湖北特产 口感纯正</a></dt>
+                                    <dd><span class="price-now">￥19.80</span><span class="original-price">￥19.80</span></dd>
+                                </dl>
+                            </li>
+                            <div class="medium-pic">
+                                <img src="picture/web-3-38-4.jpg" alt="">
+                                <a href="">黄晓油面（精装）120g 手工面条 湖北特产 口感纯正</a>
+                            </div>
+                            <li>
+                                <dl>
+                                    <dd><a href="#"><img src="picture/web-3-38-5.jpg" alt=""></a></dd>
+                                    <dt><a href="">黄晓油面（精装）120g 手工面条 湖北特产 口感纯正</a></dt>
+                                    <dd><span class="price-now">￥19.80</span><span class="original-price">￥19.80</span></dd>
+                                </dl>
+                            </li>
+                            </ul>
+                            <ul class="clearfix d-flex">
+                            <li>
+                                <dl>
+                                    <dd><a href="#"><img src="picture/web-3-38-6.jpg" alt=""></a></dd>
+                                    <dt><a href="">黄晓油面（精装）120g 手工面条 湖北特产 口感纯正</a></dt>
+                                    <dd><span class="price-now">￥19.80</span><span class="original-price">￥19.80</span></dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dd><a href="#"><img src="picture/web-3-38-7.png" alt=""></a></dd>
+                                    <dt><a href="">黄晓油面（精装）120g 手工面条 湖北特产 口感纯正</a></dt>
+                                    <dd><span class="price-now">￥19.80</span><span class="original-price">￥19.80</span></dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dd><a href="#"><img src="picture/web-3-38-8.jpg" alt=""></a></dd>
+                                    <dt><a href="">黄晓油面（精装）120g 手工面条 湖北特产 口感纯正</a></dt>
+                                    <dd><span class="price-now">￥19.80</span><span class="original-price">￥19.80</span></dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dd><a href="#"><img src="picture/web-3-38-9.jpg" alt=""></a></dd>
+                                    <dt><a href="">黄晓油面（精装）120g 手工面条 湖北特产 口感纯正</a></dt>
+                                    <dd><span class="price-now">￥19.80</span><span class="original-price">￥19.80</span></dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dd><a href="#"><img src="picture/web-3-38-10.jpg" alt=""></a></dd>
+                                    <dt><a href="">黄晓油面（精装）120g 手工面条 湖北特产 口感纯正</a></dt>
+                                    <dd><span class="price-now">￥19.80</span><span class="original-price">￥19.80</span></dd>
+                                </dl>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--4楼-->
+        <div class="home-standard-layout">
+            <div class="left-siderbar">
+                <div class="left-title">
+                    <img src="picture/web-4-21.png" alt="">
+                    <a href="">蛋奶速食</a>
+                </div>
+                <div class="middle-layout">
+                    <div class="right-side-focus">
+                        <img src="picture/web-2-28-1.jpg" alt="">
+                    </div>
+                    <div class="tabs-panel middle-goods-list ">
+                        <ul class="clearfix">
+                            <li>
+                                <dl>
+                                    <dd><a href="#"><img src="picture/web-2-28-2.jpg" alt=""></a></dd>
+                                    <dt><a href=""></a>黄晓油面（精装）120g 手工面条 湖北特产 口感纯正</dt>
+                                    <dd><span class="price-now">￥19.80</span><span class="original-price">￥19.80</span></dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dd><a href="#"><img src="picture/web-2-28-3.jpg" alt=""></a></dd>
+                                    <dt><a href="">黄晓油面（精装）120g 手工面条 湖北特产 口感纯正</a></dt>
+                                    <dd><span class="price-now">￥19.80</span><span class="original-price">￥19.80</span></dd>
+                                </dl>
+                            </li>
+                            <div class="medium-pic">
+                                <img src="picture/web-2-28-4.jpg" alt="">
+                                <a href="">黄晓油面（精装）120g 手工面条 湖北特产 口感纯正</a>
+                            </div>
+                            <li>
+                                <dl>
+                                    <dd><a href="#"><img src="picture/web-2-28-5.jpg" alt=""></a></dd>
+                                    <dt><a href="">黄晓油面（精装）120g 手工面条 湖北特产 口感纯正</a></dt>
+                                    <dd><span class="price-now">￥19.80</span><span class="original-price">￥19.80</span></dd>
+                                </dl>
+                            </li>
+                            </ul>
+                            <ul class="clearfix d-flex">
+                            <li>
+                                <dl>
+                                    <dd><a href="#"><img src="picture/web-2-28-6.jpg" alt=""></a></dd>
+                                    <dt><a href="">黄晓油面（精装）120g 手工面条 湖北特产 口感纯正</a></dt>
+                                    <dd><span class="price-now">￥19.80</span><span class="original-price">￥19.80</span></dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dd><a href="#"><img src="picture/web-2-28-7.jpg" alt=""></a></dd>
+                                    <dt><a href="">黄晓油面（精装）120g 手工面条 湖北特产 口感纯正</a></dt>
+                                    <dd><span class="price-now">￥19.80</span><span class="original-price">￥19.80</span></dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dd><a href="#"><img src="picture/web-2-28-8.jpg" alt=""></a></dd>
+                                    <dt><a href="">黄晓油面（精装）120g 手工面条 湖北特产 口感纯正</a></dt>
+                                    <dd><span class="price-now">￥19.80</span><span class="original-price">￥19.80</span></dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dd><a href="#"><img src="picture/web-2-28-9.jpg" alt=""></a></dd>
+                                    <dt><a href="">黄晓油面（精装）120g 手工面条 湖北特产 口感纯正</a></dt>
+                                    <dd><span class="price-now">￥19.80</span><span class="original-price">￥19.80</span></dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dd><a href="#"><img src="picture/web-2-28-10.jpg" alt=""></a></dd>
+                                    <dt><a href="">黄晓油面（精装）120g 手工面条 湖北特产 口感纯正</a></dt>
+                                    <dd><span class="price-now">￥19.80</span><span class="original-price">￥19.80</span></dd>
+                                </dl>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--5楼-->
+        <div class="home-standard-layout">
+            <div class="left-siderbar">
+                <div class="left-title">
+                    <img src="picture/web-5-51.png" alt="">
+                    <a href="">酒水饮品</a>
+                </div>
+                <div class="middle-layout">
+                    <div class="right-side-focus">
+                        <img src="picture/web-5-58-1.jpg" alt="">
+                    </div>
+                    <div class="tabs-panel middle-goods-list ">
+                        <ul class="clearfix">
+                            <li>
+                                <dl>
+                                    <dd><a href="#"><img src="picture/web-5-58-2.png" alt=""></a></dd>
+                                    <dt><a href=""></a>黄晓油面（精装）120g 手工面条 湖北特产 口感纯正</dt>
+                                    <dd><span class="price-now">￥19.80</span><span class="original-price">￥19.80</span></dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dd><a href="#"><img src="picture/web-5-58-3.jpg" alt=""></a></dd>
+                                    <dt><a href="">黄晓油面（精装）120g 手工面条 湖北特产 口感纯正</a></dt>
+                                    <dd><span class="price-now">￥19.80</span><span class="original-price">￥19.80</span></dd>
+                                </dl>
+                            </li>
+                            <div class="medium-pic">
+                                <img src="picture/web-5-58-4.jpg" alt="">
+                                <a href="">黄晓油面（精装）120g 手工面条 湖北特产 口感纯正</a>
+                            </div>
+                            <li>
+                                <dl>
+                                    <dd><a href="#"><img src="picture/web-5-58-5.jpg" alt=""></a></dd>
+                                    <dt><a href="">黄晓油面（精装）120g 手工面条 湖北特产 口感纯正</a></dt>
+                                    <dd><span class="price-now">￥19.80</span><span class="original-price">￥19.80</span></dd>
+                                </dl>
+                            </li>
+                            </ul>
+                            <ul class="clearfix d-flex">
+                            <li>
+                                <dl>
+                                    <dd><a href="#"><img src="picture/web-5-58-6.png" alt=""></a></dd>
+                                    <dt><a href="">黄晓油面（精装）120g 手工面条 湖北特产 口感纯正</a></dt>
+                                    <dd><span class="price-now">￥19.80</span><span class="original-price">￥19.80</span></dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dd><a href="#"><img src="picture/web-5-58-7.jpg" alt=""></a></dd>
+                                    <dt><a href="">黄晓油面（精装）120g 手工面条 湖北特产 口感纯正</a></dt>
+                                    <dd><span class="price-now">￥19.80</span><span class="original-price">￥19.80</span></dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dd><a href="#"><img src="picture/web-5-58-8.jpg" alt=""></a></dd>
+                                    <dt><a href="">黄晓油面（精装）120g 手工面条 湖北特产 口感纯正</a></dt>
+                                    <dd><span class="price-now">￥19.80</span><span class="original-price">￥19.80</span></dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dd><a href="#"><img src="picture/web-5-58-9.jpg" alt=""></a></dd>
+                                    <dt><a href="">黄晓油面（精装）120g 手工面条 湖北特产 口感纯正</a></dt>
+                                    <dd><span class="price-now">￥19.80</span><span class="original-price">￥19.80</span></dd>
+                                </dl>
+                            </li>
+                            <li>
+                                <dl>
+                                    <dd><a href="#"><img src="picture/web-5-58-10.jpg" alt=""></a></dd>
+                                    <dt><a href="">黄晓油面（精装）120g 手工面条 湖北特产 口感纯正</a></dt>
+                                    <dd><span class="price-now">￥19.80</span><span class="original-price">￥19.80</span></dd>
+                                </dl>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+</div>
+</div>
+<!-- <iframe class="my-footer" src="footer.html" frameborder="0" scrolling="no"></iframe> -->
+</body>
+</html>

@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/nav.css">
+    <style>
+        body{
+            margin:0;
+            padding:0;
+        }
+        .my_head{
+            width:100%;
+        }
+        .wrapper{
+            width: 1200px!important;
+            margin: auto;
+        }
+        /* 左边图片 */
+        .ncs-detail {
+            min-height: 500px;
+            margin-bottom: 20px;
+            border: solid 1px #EEE;
+            background: #fff;
+            position: relative;
+            z-index: 2;
+        }
+        .ncs-goods-pic{
+            background-color: #FFF;
+            position: absolute;
+            z-index: 99;
+            top: 0;
+            left: 0;
+        }
+        .gallery-wrap {
+            height: 400px;
+            width: 400px;
+            position: relative;
+            overflow: hidden;
+        }
+        .gallery {
+            position: absolute;
+            overflow: hidden;
+            opacity: 1;
+            height: 360px;
+            width: 360px;
+            left: 20px;
+            top: 20px;
+        }
+        .gallery img {
+            width: 360px;
+            height: 360px;
+        }
+        .controller-wrap {
+            background: rgba(255,255,255,.7);
+            padding: 0;
+            position: absolute;
+            left: 20px;
+            right: 20px;
+            bottom: -62px;
+        }
+        .controller {
+            width: 360px;
+            height: 72px;
+            position: relative;
+            overflow: hidden;
+        }
+        .controller ul {
+            font-size: 0;
+            width: 100%;
+            position: absolute;
+            list-style: none outside none;
+            border:1px solid #ccc;
+        }
+        .controller li {
+            vertical-align: middle;
+            letter-spacing: normal;
+            word-spacing: normal;
+            display: inline-block;
+            width: 72px;
+        }
+        .controller img {
+            max-width: 58px;
+            max-height: 58px;
+            text-align: center;
+            vertical-align: middle;
+            display: table-cell;
+            padding: 1px;
+            border: 1px solid #EEE;
+            overflow: hidden;
+        }
+        .ncs-handle{
+            width:350px;
+            height:24px;
+            border-top:1px dotted #eee;
+        }
+        .ncs-handle a{
+            color:#777;
+            background-color: #fff;
+            font-size:12px;
+            margin-right:10px;
+            padding:1px 6px;
+        } 
+        /* 中间文字 */
+        .goods-summary .name {
+            padding: 15px 20px;
+        }
+        .goods-summary {
+            background-color: #FFF;
+            min-height: 500px;
+            width: 590px;
+            margin-left: 400px;
+        }
+       .name h1{
+            font: 700 16px "Microsoft Yahei";
+            color: #333;
+            white-space: nowrap;
+            display: block;
+            overflow: hidden;
+        }
+        .name p{
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 17px;
+            color: #777;
+            white-space: normal;
+            margin-top: 5px;
+        }
+        .ncs-meta{
+            width:589px;
+            padding:15px 0;
+            background-color:#f5f5f5;
+            position:relative;
+        }
+        .ncs-meta div{
+            height:36px;
+        }
+        .ncs-meta span{
+            font-size:12px;
+            color:#666;
+            padding:6px 0 0;
+            height:30px;
+        }
+        .ncs-meta h3{
+            font-size:12px;
+            color:#c00;
+            text-decoration:line-through;
+            display:inline;
+        }
+        .ncs-meta h2{
+            font-size:24px;
+            color:#c00;
+            display:inline;
+        }
+        .ncs-meta a{
+            color:#333;
+            text-decoration:underline;
+        }
+        .ncs-meta .goods-code{
+            width:100px;
+            height:120px;
+           position:absolute;
+           z-index:1;
+           top:-10px;
+           right:12px;
+        }
+        .goods-code img{
+            width:100px;
+            height:100px;
+        }
+        .goods-code p{
+            vertical-align: middle;
+            text-align: center;
+            width:100px;
+            height:100px;
+            padding:0;
+        }
+        .foot-detail{
+            margin:0 auto;
+            height:20px !important;
+        }
+        /*右侧*/
+        .ncs-info{
+            width:210px;
+            position: absolute;
+            z-index: 2;
+            top: -1px;
+            right: -1px;
+        }
+        .ncs-detail-rate{
+            width:182px;
+            color:#999;
+            padding:5px;
+            margin:0 auto;
+        }
+        .ncs-detail-rate ul{
+            list-style: none;
+            display:flex;
+            padding: 5px 0;
+        }
+        .ncs-detail-rate ul li{
+            font-size:12px;
+            color:#555;
+            width:33.33%;
+            text-align:center;
+        }
+        .ncs-info .title{
+            background-color:#fff;
+            border:1px solid #eee;
+            padding:26px 10px;
+            text-align: center;
+        }
+        .title a{
+            font-size:16px;
+            color:#555;
+        }
+        .btns{
+            text-align:center;
+            padding-bottom: 11px;
+            border-bottom: 1px solid #eee;
+        }
+        .btns a{
+            font-size:14px;
+            text-decoration: none;
+        }
+        .first{
+            background-color:#333;
+            border:1px solid #333;
+            color:#fff;
+            margin-right:10px;
+        }
+        .second{
+            background-color:#f5f5f5;
+            color:#333 !important;
+            border:1px solid #f5f5f5;
+        }
+        .pname{
+            display:block;
+            padding:4px 0;
+            height:24px;
+        }
+        .pname span{
+            font-size:12px;
+            color:#999;
+        }
+        .pname p{
+            width:130px;
+            font-size:12px;
+            color:#333;
+            display:inline-block;
+            text-overflow:ellipsis;
+            overflow:hidden;
+            vertical-align: top;
+            white-space: nowrap;
+            margin-top:5px;
+        }
+        /*热卖*/
+        .ncs-recommend{
+            border:1px solid #ededed;
+            background:#fff;
+            margin:10px 0;
+        }
+        .ncs-recommend .title{
+            border-left:2px solid #f55;
+            margin:20px 25px 0;
+            padding:0 0 1 13px;
+        }
+        .title h4{
+            margin-left:10px;
+            height:30px;
+            font-size:14px;
+            color:#333;
+        }
+        .content ul{
+            list-style: none;
+            display:flex;
+            padding:00 5px 0;
+            margin-left: -5px;
+        }
+        .content ul li{
+            font-size:12px;
+            vertical-align:top;
+            display:inline-block;
+            width:150px;
+            padding:20px 22px 22px;
+        }
+        .goods-pic{
+            background: #fff;
+            width:150px;
+            height:150px;
+         
+            margin-left: -75;
+        }
+        .goods-pic img{
+            width:150px;
+            height:150px;
+        }
+        .goods-name{
+            width:90%;
+            height:36px;   
+        }
+        .goods-name a{
+            color:#333;
+            font-size: 12px;
+            text-decoration: none;
+            text-align: center;
+        }
+        .goods-price{
+            vertical-align: top;
+            font-size:18px;
+            color:#F32613;
+            height:20px;
+            font-weight:600;
+            text-align: center;
+        }
+        .ncs-sidebar-container{
+            margin-bottom: 10px;
+            background: #fff;
+        }
+        .ncs-sidebar-container .row{
+            border:1px solid #eee;
+            background:#fff;
+        }
+        .row {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        margin-right: -15px;
+        margin-left: -15px;
+        }
+        .ul_cont{
+            list-style: none;
+        }
+        .ncs-goods-layout{
+            position:absolute;
+        }
+        .ncs-goods-main {
+            float: right;
+            width: 960px;
+            background: #fff;
+            border: 1px solid #eee;
+        }
+        .ncs-goods-title-nav {
+            margin-top: 0;
+            height: 40px;
+            overflow: hidden;
+        }
+        .ncs-goods-title-nav ul {
+            font-size: 0;
+            background-color: #FFF;
+            border-bottom: solid #eee 1px;
+            border-top: solid #eee 1px;
+            position: relative;
+        }
+        
+        .ncs-goods-title-nav ul li {
+            vertical-align: top;
+            letter-spacing: normal;
+            word-spacing: normal;
+            display: inline-block;
+        }
+        .ncs-goods-title-nav ul li.current {
+            margin: 0 0 -1px -1px;
+        }
+        .ncs-goods-title-nav ul li a {
+            font: 400 14px "Microsoft Yahei";
+            text-decoration: none;
+            color: #777;
+            background-color: #FFF;
+            display: block;
+            padding: 0 15px;
+            border-style: solid;
+            border-color: #eee;
+            border-width: 0 1px 0 0;
+        }
+        .ncs-goods-title-nav ul li a em {
+            color: red;
+            font-weight: 700;
+        }
+        .ncs-goods-title-nav .add-cart {
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+        .ncs-goods-title-nav .add-cart a.addcart{
+            font-size: 16px;
+            display: block;
+            height: 39px;
+            line-height: 39px;
+            background: #F32613;
+            color: #fff;
+            padding: 0 12px;
+            font-weight: bold; 
+        }
+        .nc-goods-sort {
+            font-size: 0;
+            background-color: #FFF;
+            padding: 10px 0;
+            margin-bottom: 10px;
+        }
+        .ncs-goods-info-content .default {
+            text-align: center;
+        }
+        .ncs-sidebar-container{
+            width:225px
+        }
+        /* 按钮 */
+        .btn{
+            padding:5px 12px;
+        }
+        .btn .b1{
+            background-color: #F32613;
+            width:100px;
+            height:45px;
+            color:#fff;
+            margin-right:5px;
+            border-radius:2px;
+        }
+        .btn .b2{
+            background-color: #BA7538;
+            width:100px;
+            height:45px;
+            color:#fff;
+            border-radius:2px;
+        }
+        
+    </style>
+</head>
+<body>
+    <iframe class="my_head" src="header.html" frameborder="0" scrolling="no"></iframe>
+    <!-- 绿色导航栏 -->
+    <div class="nav">
+            <div class="wrapper">
+                <div class="all-category">
+                    <div class="title">
+                        <a href="">所有商品分类</a>
+                    </div>
+                </div>
+               <div>
+                    <ul class="menu">
+                        <li>
+                            <div>
+                                <img src="picture/05885064124529864.png" alt=""><span>生鲜水果</span>
+                            </div>          
+                        </li>
+                        <li>
+                            <div>
+                                <img src="picture/05885064332222891.png" alt=""><span>蛋奶素食</span>
+                            </div>         
+                        </li>
+                        <li>
+                            <div>
+                                <img src="picture/05885064496732751.png" alt=""><span>休闲零食</span>
+                            </div>
+                                   
+                        </li>
+                        <li>
+                            <div>
+                                <img src="picture/05885064692739649.png" alt=""><span>粮油杂货</span>
+                            </div>     
+                        </li>
+                        <li>
+                            <div>
+                                <img src="picture/05885064881444846.png" alt=""><span>酒水饮品</span>
+                            </div>        
+                        </li>
+                        <li>
+                            <div>
+                                <img src="picture/05885065067612515.png" alt=""><span>名优特色馆</span>
+                            </div>     
+                        </li>
+                    </ul>
+                </div>
+            <ul class="site-menu">
+                <li><a href="http://www.tujiago.com/" target="_blank">土家购</a></li>
+                <li><a href="http://www.snjgo.com/" target="_blank">神农架购</a></li>
+                <li><a href="http://www.hangowa.com/?act=special&op=show&special_id=117" target="_blank">仙岛云购</a></li>
+                <li><a href="http://www.hangowa.com/?act=special&op=show&special_id=112" target="_blank">洞庭云购</a></li>
+                <li><a href="http://www.lxjiaoyi.com/" target="_blank">洞庭云虾</a></li>
+            </ul>
+        </div>
+        </div> 
+<div class="wrapper">
+<!-- 详情图 -->
+    <div class="ncs-detail">
+        <!-- 左边4张图片 -->
+        <div class="ncs-goods-pic">
+            <div class="gallery-wrap">
+                <div class="gallery">
+                    <img src="detail-pics/10_05960386786810295_360.jpg" alt="">
+                </div>
+            </div>
+            <div class="control-wrap">
+                <div class="controller">
+                    <ul>
+                        <li><img src="detail-pics/10_05960388171529708_360.jpg" alt=""></li>
+                        <li><img src="detail-pics/10_05960386887433482_360.jpg" alt=""></li>
+                        <li><img src="detail-pics/10_05960386786810295_360.jpg" alt=""></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- 图片下方文字 -->
+            <div class="ncs-handle">
+                <a href="">分享(0)</a>
+                <a href="">收藏商品(0)</a>
+                <a href="">加入对比</a>
+                <a href="">举报</a>
+            </div>
+        </div>
+        <!-- 中间文字 -->
+        <div class="goods-summary">
+            <div class="name">
+                <h1>【现摘现发】秭归纽荷尔脐橙5斤装新鲜上市</h1>
+                <p>5斤</p>
+            </div>
+            <div class="ncs-meta">
+                <div><span>市场价：</span><h3>￥35.00</h3></div>
+                <div><span>商城价：</span><h2>￥28.00</h2></div>
+                <div><span>商品评分：</span><a href="">共有1条评论</a></div>
+                <div class="goods-code">
+                    <p>
+                        <img src="detail-pics/104772.png" alt="">
+                    </p>
+                    <span class="foot-detail">客户端扫购有惊喜</span>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <ul style="display:flex;list-style: none">
+                        <li>配送至：</li>
+                        <li>
+                            <div>
+                                <a data-trigger="dropdown" href="" style="border:1px solid #999;color:#333">湖北武汉市东西湖区</a>
+                                <ul class="dropdown" style="display:none">
+                                    <li><a href="">湖北</a></li>
+                                    <li><a href="">武汉市</a></li>
+                                    <li><a href="">东西湖区</a></li>
+                                    <li><a href="">关闭</a></li>
+                                </ul>
+                                <ul>
+                                    <li>东西湖区</li>
+                                    <li>新洲区</li>
+                                    <li>武昌区</li>
+                                    <li>汉南区</li>
+                                    <li>汉阳区</li>
+                                    <li>江夏区</li>
+                                    <li>江岸区</li>
+                                    <li>江汉区</li>
+                                    <li>洪汉区</li>
+                                    <li>硚口区</li>
+                                    <li>蔡甸区</li>
+                                    <li>青山区</li>
+                                    <li>黄陂区</li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <strong>有货</strong>
+                            <span>免运费</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <div>
+                        <input type="text" value="1" maclength="6" size="3">
+                    </div>
+                    <div class="btn" style="display:flex">
+                        <a href="javascript:;" class="b1"><h5>加入购物车</h5></a>
+                        <a href="javascript:;" class="b2"><h5>立即购买</h5></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="js/jquery-1.11.3.js"></script>
+        <script>
+      $("[data-trigger=dropdown]")
+		.parent()
+		.on("mouseover",function(){
+			$(this).children().last().show()
+		})
+		//return parent div
+		.on("mouseout",function(){
+			$(this).children().last().hide()
+		})
+ </script>
+        <!-- 右侧 -->
+        <div class="ncs-info">
+            <div class="title">
+                <h4><a href="">宜昌慧云特产专营店</a></h4>
+            </div>
+            <div class="content">
+                <div class="ncs-detail-rate">
+                    <ul>
+                        <li>描述</li>
+                        <li>服务</li>
+                        <li>物流</li>
+                    </ul>
+                </div>
+                <div class="btns">
+                    <a class="first" href="#">进店逛逛</a>
+                    <a class="second" href="#">收藏店铺(0)</a>
+                </div>
+                <div class="pname">
+                    <span>公司名称：</span><p>宜昌慧云电子商务有限公司</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 店铺热卖 -->
+    <div class="ncs-recommend">
+        <div class="title">
+            <h4>店铺热卖</h4>
+        </div>
+        <div class="content">
+            <ul>
+                <li>  
+                    <div class="goods-pic">
+                        <a href=""><img src="detail-pics/10_05980307221862945_240.jpg" alt=""></a>
+                    </div>
+                    <div class="goods-detail">
+                        <div class="goods-name">
+                            <a href="">（贝店专链）当季新鲜椪柑芦柑5斤包邮</a>
+                        </div>
+                        <div class="goods-price">￥35.00</div>
+                    </div>
+                    
+                </li>
+                <li>  
+                        <div class="goods-pic">
+                            <a href=""><img src="detail-pics/10_05804006171236028_240.jpg" alt=""></a>
+                        </div>
+                        <div class="goods-detail">
+                            <div class="goods-name">
+                                <a href="">（贝店专用链接）纯香豆奶250ml*15瓶包邮</a>
+                            </div>
+                            <div class="goods-price">￥38.50</div>
+                        </div>
+                        
+                    </li>
+                    <li>  
+                        <div class="goods-pic">
+                            <a href=""><img src="detail-pics/10_05544048064221954_240.jpg" alt=""></a>
+                        </div>
+                        <div class="goods-detail">
+                            <div class="goods-name">
+                                    <a href="">花菇精选剪脚香菇 天然大花菇 150g 单朵5-</a>
+                            </div>
+                            <div class="goods-price">￥28.60</div>
+                        </div>
+                            
+                        </li>
+                        <li>  
+                                <div class="goods-pic">
+                                    <a href=""><img src="detail-pics/10_05439202775046164_240.jpg" alt=""></a>
+                                </div>
+                                <div class="goods-detail">
+                                    <div class="goods-name">
+                                        <a href="">满山红野生椴木香菇 农家干香菇500g 椴木香菇</a>
+                                    </div>
+                                    <div class="goods-price">￥42.90</div>
+                                </div>
+                                
+                            </li>
+                            <li>  
+                                    <div class="goods-pic">
+                                        <a href=""><img src="detail-pics/10_05937088765358675_240.jpg" alt=""></a>
+                                    </div>
+                                    <div class="goods-detail">
+                                        <div class="goods-name">
+                                            <a href="">湖北枝江红心蜜柚子1个装2-3斤包邮</a>
+                                        </div>
+                                        <div class="goods-price">￥12.80</div>
+                                    </div>
+                                    
+                                </li>
+                                <li>  
+                                        <div class="goods-pic">
+                                            <a href=""><img src="detail-pics/10_05937088765358675_240.jpg" alt=""></a>
+                                        </div>
+                                        <div class="goods-detail">
+                                            <div class="goods-name">
+                                                <a href="">（脉宝云店专用）湖北枝江红心蜜柚子2个装4.5-5斤包邮</a>
+                                            </div>
+                                            <div class="goods-price">￥25.00</div>
+                                        </div>
+                                        
+                                    </li>
+            </ul>
+        </div>
+    </div>
+    
+
+<div id="content" class="ncs-goods-layout" >
+    <!-- 底部详情 -->
+        <div class="ncs-sidebar-container">
+                <div class="title">
+                    <h4>看了又看</h4>
+                </div>
+                <ul class="ul_cont">
+                    <li>
+                        <div class="goods-pic">
+                            <a href=""><img src="detail-pics/224_05972581794665066_240.jpg" alt=""></a>
+                        </div>
+                        <div class="goods-detail">
+                            <div class="goods-name">
+                                <a href="">昭通自然生长丑苹果5斤装(60mm-65mm)</a>
+                            </div>
+                            <div>￥23.90</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="goods-pic">
+                            <a href=""><img src="detail-pics/224_05972361736553416_240.jpg" alt=""></a>
+                        </div>
+                        <div class="goods-detail">
+                            <div class="goods-name">
+                                <a href="">四川金堂脐橙3斤装</a>
+                            </div>
+                            <div>￥14.90</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="goods-pic">
+                            <a href=""><img src="detail-pics/224_05972579485795169_240.jpg" alt=""></a>
+                        </div>
+                        <div class="goods-detail">
+                            <div class="goods-name">
+                                <a href="">昭通自然生长丑苹果3斤装（60mm-65mm）</a>
+                            </div>
+                            <div>￥19.90</div>
+                        </div>
+                    </li>
+                    <li>
+                    <div class="goods-pic">
+                            <a href=""><img src="detail-pics/224_05976029168271049_240.jpg" alt=""></a>
+                        </div>
+                        <div class="goods-detail">
+                            <div class="goods-name">
+                                <a href="">四川金堂脐橙5斤装</a>
+                            </div>
+                            <div>￥19.90</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+  <div class="ncs-goods-main">
+    <div class="tabbar pngFix">
+      <div class="ncs-goods-title-nav">
+        <ul id="categorymenu">
+            <li class="current"><a href="#content">商品详情</a></li>
+            <li><a id="tabGoodsRate" href="#content">商品评价<em>(0)</em></a></li>
+            <li><a id="tabGoodsTraded" href="#content">销售记录<em>(8)</em></a></li>
+            <li><a id="tabGuestbook" href="#content">购买咨询</a></li>
+        </ul>
+        <div class="add-cart cart02">
+            <a href="#" class="addcart"></i>加入购物车</a>
+         <!-- <div class="ncs-cart-popup cart-popup02">
+            <dl>
+              <dt>成功添加到购物车<a title="关闭" onClick="$('.ncs-cart-popup').css({'display':'none'});">X</a></dt>
+              <dd>购物车共有 <strong class="bold_num"></strong> 种商品 总金额为：<em class="bold_mly" class="saleP"></em></dd>
+              <dd class="btns"><a href="javascript:void(0);">查看购物车</a> <a href="javascript:void(0);">继续购物</a></dd>
+            </dl>
+          </div>-->
+          <!-- E 加入购物车弹出提示框 -->
+        </div>  
+      </div>
+    </div>
+    <div class="ncs-intro">
+      <div class="content bd" id="ncGoodsIntro">
+                <ul class="nc-goods-sort">
+          <li>商家货号：</li>
+          <li>品牌：果然乐果</li>                            </ul>
+                <div class="ncs-goods-info-content">
+                    <div class="default">
+                        <img src="detail-pics/224_05972358171810831_1280.jpg" alt="image" />
+                        <img src="detail-pics/224_05972358041773306_1280.jpg" alt="image" />
+                        <img src="detail-pics/224_05972358175641186_1280.jpg" alt="image" />
+                        <img src="detail-pics/224_05972358195561977_1280.jpg" alt="image" />
+                        <img src="detail-pics/224_05972358236807638_1280.jpg" alt="image" />
+                        <img src="detail-pics/224_05972357996372459_1280.jpg" alt="image" />
+                        <img src="detail-pics/224_05972357999765003_1280.jpg" alt="image" />
+                        <img src="detail-pics/224_05972358204173651_1280.jpg" alt="image" />
+                        <img src="detail-pics/224_05972358187454245_1280.jpg" alt="image" />
+                        <img src="detail-pics/224_05972358008071733_1280.jpg" alt="image" />
+                        <img src="detail-pics/224_05972358199376663_1280.jpg" alt="image" />
+                        <img src="detail-pics/224_05972358027610876_1280.jpg" alt="image" />
+                    </div>
+                  </div>
+      </div>
+    </div>
+        <!--<div class="ncs-comment">
+      <div class="ncs-goods-title-bar hd">
+        <h4><a href="javascript:void(0);">商品评价</a></h4>
+      </div>
+      <div class="ncs-goods-info-content bd" id="ncGoodsRate">
+        <div class="top">
+          <div class="rate">
+            <p><strong>100</strong><sub>%</sub>好评</p>
+            <span>共有0人参与评分</span></div>
+          <div class="percent">
+            <dl>
+              <dt>好评<em>(100%)</em></dt>
+              <dd><i style="width: 100%"></i></dd>
+            </dl>
+            <dl>
+              <dt>中评<em>(0%)</em></dt>
+              <dd><i style="width: 0%"></i></dd>
+            </dl>
+            <dl>
+              <dt>差评<em>(0%)</em></dt>
+              <dd><i style="width: 0%"></i></dd>
+            </dl>
+          </div>
+          <div class="btns"><span>您可对已购商品进行评价</span>
+            <p><a href="" class="ncbtn ncbtn-grapefruit" target="_blank"><i class="icon-comment-alt"></i>评价商品</a></p>
+          </div>
+        </div>
+        <div class="ncs-goods-title-nav">
+          <ul id="comment_tab">
+            <li data-type="all" class="current"><a href="javascript:void(0);">商品评价(0)</a></li>
+            <li data-type="1"><a href="javascript:void(0);">好评(0)</a></li>
+            <li data-type="2"><a href="javascript:void(0);">中评(0)</a></li>
+            <li data-type="3"><a href="javascript:void(0);">差评(0)</a></li>
+          </ul>
+        </div>-->
+        <!-- 商品评价内容部分 -->
+        <!--<div id="goodseval" class="ncs-commend-main"></div>
+      </div>
+    </div>-->
+    <!--<div class="ncg-salelog">
+      <div class="ncs-goods-title-bar hd">
+        <h4><a href="javascript:void(0);">销售记录</a></h4>
+      </div>
+      <div class="ncs-goods-info-content bd" id="ncGoodsTraded">
+        <div class="top">
+          <div class="price">商&nbsp;&nbsp;城&nbsp;&nbsp;价<strong>19.90</strong>元<span>购买的价格不同可能是由于店铺往期促销活动引起的，详情可以咨询卖家</span></div>
+        </div>-->
+        <!-- 成交记录内容部分 -->
+        <!--<div id="salelog_demo" class="ncs-loading"> </div>
+      </div>
+    </div>
+    <div class="ncs-consult">
+      <div class="ncs-goods-title-bar hd">
+        <h4><a href="javascript:void(0);">购买咨询</a></h4>
+      </div>
+      <div class="ncs-goods-info-content bd" id="ncGuestbook"> -->
+        <!-- 咨询留言内容部分 -->
+        <!--<div id="consulting_demo" class="ncs-loading"> </div>
+      </div>
+    </div> -->
+
+
+
+
+
+
+
+
+
+
+</div>
+</body>
+</html>
